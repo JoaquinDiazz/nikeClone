@@ -1,0 +1,663 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.titulo{
+    font-size: 45px;
+    font-weight: bolder;
+}
+.subTitulo{
+    font-size: 24px;
+    font-weight: 500;
+    margin-block: 24px;
+}
+.texto{
+    font-size: 16px;
+}
+.textoChiquito{
+    font-size: 12px;
+}
+section,
+footer {
+    padding-inline: 1.3em;
+}
+/* BLACK BUTTON */
+.blackBtn {
+    font-size: 14px;
+    font-weight: bolder;
+    padding: 15px 30px;
+    border-radius: 25px;
+    border: none;
+    background-color: black;
+    color: white;
+}
+/* WHITE BUTTON */
+.whitekBtn {
+    font-size: 14px;
+    font-weight: bolder;
+    padding: 15px 30px;
+    border-radius: 25px;
+    border: none;
+    color: black;
+    background-color: white;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+header .bloque1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    
+    padding-inline: 23px;
+    height: 2.5em;
+}
+header .bloque1 .buscar {
+    display: flex;
+}
+header .bloque1 .buscar p {
+    font-weight: bolder;
+    padding-inline:.5em ;
+    cursor: pointer;
+}
+header .bloque1 .buscar p:first-child {
+    border-right: 2px solid black;
+}
+header .bloque2 {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.75em;
+    padding-inline: 23px;
+}
+header .bloque2 nav ul {
+    display: flex;
+    gap: 1.5em;
+}
+header .bloque2 nav ul .close {
+    display: none;
+}
+header .bloque2 nav ul li {
+    list-style-type: none;
+}
+header .bloque2 nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+header .bloque2 .menu {
+    display: none;
+}
+header .bloque2  .icons {
+    display: flex;
+    align-items: center;
+    gap: 2.5em;
+}
+header .bloque2  .icons .search {
+    background-color: #f5f5f5;
+    padding: .6em 4em .6em 1em;
+    border-radius: 25px;
+    display: flex;
+    gap: .5em;
+}
+header .bloque2  .icons i {
+    font-size: 18px;
+}
+header .bloque2  .icons p {
+    cursor: pointer;
+    color: gray;
+    font-size: 14px;
+}
+header .bloque2  .icons p i {
+    font-size: 18px;
+    color: black;
+    height: 2em;
+    margin-right: .5em;
+}
+/* ----------------3 CUOTAS CARRUSEL--------------------- */
+.tresCuotas {
+    padding-inline: 1.5em;
+    height: 70px;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tresCuotas img{
+    height: 25px;
+}
+/*------------------------- VIDEO POR FIN-------------------- */
+.porfin {
+    height: 50vh;
+    width: 100%;
+    background-image: url(img/porfin.gif);
+    background-position:center ;
+    background-size: contain;
+}
+/* -------------------NIKE INVINCIBLE------------------------ */
+.nikeInvincible{
+    padding-top: 6em;
+}
+.nikeInvincible .img{
+    height: 100vh;
+    background-image: url(img/nikeInvicible.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nikeInvincible .text{
+    margin: 2em auto;
+    text-align: center;
+}
+.nikeInvincible .text h3 {
+    margin-block: 8px;
+}
+/* ------------------ULTIMOS LANZAMIENTOS---------------------------- */
+.ultimosLanzamientos {
+    margin-block: 1.5em;
+}
+.ultimosLanzamientos h3{
+    margin-bottom: .5em;
+}
+.ultimosLanzamientos .container{
+    display: flex;
+    justify-content: space-between;
+}
+.ultimosLanzamientos .container > *{
+    width: calc(100% / 2 - .5em);
+    height: 100vh;
+    position: relative;
+}
+.ultimosLanzamientos .generation{
+    background-image: url(img/generation.webp);
+} 
+.ultimosLanzamientos .jordan {
+    background-image: url(img/jordan.webp);
+}
+.ultimosLanzamientos .jordan,
+.ultimosLanzamientos .generation{
+    background-position: center;
+    background-size: cover;
+} 
+.ultimosLanzamientos .jordan .text,
+.ultimosLanzamientos .generation .text{
+    position: absolute;
+    bottom: 2.25em;
+    left: 1em;
+}
+.ultimosLanzamientos .jordan .text h3 {
+    color: white;
+}
+/* ---------------------NOVEDAES----------------- */
+.novedades h3{
+    margin-block: 1em;
+}
+.novedades .container {
+    display: flex;
+    justify-content: space-between;
+}
+.novedades .card{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 3 - .8em);
+}
+.novedades .card img{
+    height: 25em;
+    object-fit: cover;
+}
+.novedades .card .cardBody{
+    margin-block: 1.5em;
+}
+.novedades .card .cardBody .nombre,
+.novedades .card .cardBody .precio {
+    font-weight: bold;
+}
+.novedades .card .cardBody .descripcion{
+    margin-block: .6em;
+    color: gray;
+}
+/* ------------------------MAXXED OUT--------------------- */
+.maxxed .imgMaxxed{
+    height: 110vh;
+    background-image: url(img/maxxed.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.maxxed .text {
+    text-align: center;
+    margin-block: 1em;
+}
+.maxxed .text .texto,
+.maxxed .text .titulo {
+    margin-block: .5em;
+}
+/* -------------------------COMPRAR POR GENERO---------------- */
+.genero .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.genero .container h3 {
+    margin-block: 1.5em;
+}
+.genero .container .hijo {
+    width: calc(100% / 3 - .7em);
+    height: 35.5em;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.genero .container .hombre {
+    background-image: url(img/hombre.webp);
+    background-size: cover;
+    background-position: center;
+}
+.genero .container .mujer {
+    background-image: url(img/mujer.webp);
+    background-size: cover;
+    background-position: center;
+}
+.genero .container .niños {
+    background-image: url(img/niño.webp);
+    background-size: cover;
+    background-position: center;
+}
+.genero .container .hombre .text,
+.genero .container .mujer .text,
+.genero .container .niños .text {
+    position: absolute;
+    bottom: 2.25em;
+    left: 1em;
+}
+.genero .container .hombre .text h3,
+.genero .container .mujer .text h3,
+.genero .container .niños .text h3 {
+    margin: 0;
+}
+.genero .container .hombre button,
+.genero .container .mujer button,
+.genero .container .niños button {
+    margin-top: 1.2em;
+}
+/* ------------------------Nuestros Íconos--------------------- */
+.nuestrosIconos h3{
+    margin-block: 1.5em;
+}
+.nuestrosIconos .container{
+    display: flex;
+    justify-content: space-between;
+}
+.nuestrosIconos .container .hijo {
+    margin-bottom: .7em;
+    width: calc(100% / 2 - .5em);
+    height: 110vh;
+    background-size: cover;
+    position: relative;
+}
+.nuestrosIconos .container .airForce {
+    background-image: url(img/airForce.webp);
+}
+.nuestrosIconos .container .dunk{
+    background-image: url(img/dunk.webp);
+}
+.nuestrosIconos .container .dunk .text,
+.nuestrosIconos .container .airForce .text {
+    position: absolute;
+    bottom: 2.25em;
+    left: 1em;
+}
+/* -----------------------REGISTRATE--------------------------  */
+.registrate {
+    padding-block: 2em;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+.registrate :first-child {
+    font-weight: bold;
+    padding: 1em 0 .5em 0;
+}
+.registrate .input {
+    height: 40px;
+    width: 260px;
+    margin: 2em 0 1em 0;
+    border: none;
+    border-radius: 25px;
+    padding: .5em 2em;
+    color: gray;
+}
+.registrate .input:focus {
+    border-color: none;
+}
+.registrate .peque {
+    font-size: .55em;
+}
+.registrate .peque .subtitulado {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.registrate :last-child {
+    margin-top: 1em;
+} 
+/* --------------------------FOOTER----------------------------------------- */
+footer {
+    background-color: #111111;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+footer .bloque1 {
+    padding-top: 2em;
+    padding-bottom: 6.25em;
+
+    display: flex;
+    justify-content: space-between;
+}
+footer .bloque1 > * {
+    width: 12.5em;
+}
+footer .bloque1 .preciosJustos {
+    width: 16.25em;
+}
+footer .bloque1  .textoChiquito{
+    font-size: .8em;
+    font-weight: bolder;
+}
+footer .bloque1 li {
+    list-style-type: none;
+    font-size: .75em;
+    margin-block: .8em;
+}
+footer .bloque1 li a,
+footer .bloque2 .terminos, 
+footer .bloque2 .politica {
+    text-decoration: none;
+    color: #7e7e7e;
+    transition: .5s;
+}
+footer .bloque1 li a:hover,
+footer .bloque2 .terminos:hover, 
+footer .bloque2 .politica:hover {
+    color: white;
+}
+/* -------------------------AYUDA------------------- */
+footer .bloque1 .ayuda .boton {
+    color: white;
+}
+footer .bloque1 .ayuda .ver {
+    text-decoration: underline;
+}
+
+/* ----------------REDES---------------------------- */
+footer .bloque1 .redes {
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+    gap: 1.25em;
+}
+footer .bloque1 .redes a{
+    font-size: 1.7em;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #7e7e7e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .bloque1 .redes a:hover {
+    background-color: white;
+}
+footer .bloque1 .redes a i {
+    color: black;
+}
+footer .bloque2 {
+    border-top:1px solid #1d1e1e;
+    padding: 20px 0 20px 0;
+    font-size: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5em;
+}
+footer .bloque2 > *{
+    display: flex;
+    gap: 1em;
+}
+footer .bloque2 .argentina {
+    color: white;
+    text-decoration: none;
+}
+footer .bloque2 .copyright {
+    color: #7e7e7e;
+}
+/* ----------------------MEDIA QUERIES------------------------ */
+@media screen and (max-width: 1025px){
+    section,
+    footer {
+    padding-inline: 1.25em;
+    }
+    .titulo {
+        font-size: 2.5em;
+    }
+    header {
+        height: 56px;
+    }
+    header .bloque1 {
+        display: none;
+    }
+    header .bloque2 .logo {
+        height: 40px;
+    }
+    header .bloque2  .icons .search {
+        background-color: none;
+        padding: 0;
+        border-radius: none;
+    }
+    header .bloque2  .icons p {
+        display: none;
+    }
+    header .bloque2 nav {
+        display: none;
+    }
+    header .bloque2 nav.active {
+        opacity: 1;
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        background-color: white;
+        width: 70%;
+        height: 100vh;
+        border: 2px solid black;
+    }
+    header .bloque2 nav.active ul {
+        padding: 1em;
+        flex-direction: column;
+        position: relative;
+    }
+    header .bloque2 nav.active ul .close {
+        display: block;
+        position: absolute;
+        right: 1em;
+        top: 1em;
+    } 
+    header .bloque2 nav.active ul .close i {
+        height: 30px;
+    }
+    header .bloque2 .menu {
+        display: block;
+        font-size: 30px;
+        order: -999;
+    }
+    .porfin {
+        height: 35vh;
+    }
+    /* -------------------NIKE INVINCIBLE------------------------ */
+    .nikeInvincible{
+        padding-top: 6em;
+    }
+    .nikeInvincible .text{
+        padding-block: 1em;
+        margin: 0;
+    }
+    .nikeInvincible p{
+        font-size: 1em;
+        margin-block: .7em;
+    }
+    .nikeInvincible h3{
+        font-size: 1.8em;
+    }
+    /* ------------------ULTIMOS LANZAMIENTOS---------------------------- */
+    .ultimosLanzamientos .container > *{
+        height: 70vh;
+    }
+    .ultimosLanzamientos .container .subTitulo {
+        font-size: 1em;
+    }
+    .ultimosLanzamientos .container button {
+        font-size: .8em;
+    }
+    /* ---------------------NOVEDAES----------------- */
+    .novedades .container .card img{
+        height: 16em;
+    }
+    /* ------------------------MAXXED OUT--------------------- */
+    .maxxed .imgMaxxed{
+        background-image: url(img/maxxed2.webp);
+        background-position: top;
+        height: 180vh;
+    }
+    .maxxed .text .subTitulo {
+        font-size: 1em;
+        margin: 0;
+    }
+    .maxxed .text .titulo {
+        font-size: 2em;
+    }
+    /* -----------------------------------COMPRAR POR GENERO---------------------------------- */
+    .genero .container .hijo {
+        height: 65vh;
+    }
+    /* ------------------NUESTROS ICONOS------------------------- */
+    .nuestrosIconos .container .hijo {
+        height: 28em;
+    }
+    /* --------------------------------FOOTER------------------------------ */
+    footer .bloque1 {
+        flex-direction: column;
+        padding-bottom: 0;
+        padding-top: .5em;
+    }
+    footer .bloque1 > * {
+        width: 100%;
+    }
+    footer .bloque1 .tienda,
+    footer .bloque1 .acerca,
+    footer .bloque1 .ayuda {
+        border-bottom:1px solid #1d1e1e;
+        padding: 1em 1em 1em 0;
+    }
+    footer .bloque1 .tienda ul,
+    footer .bloque1 .acerca ul,
+    footer .bloque1 .ayuda ul {
+        display: none;
+    }
+    footer .bloque1 .redes,
+    footer .bloque1 .preciosJustos {
+        padding-top: 1.5em;
+    }
+    footer .bloque1 .redes {
+        justify-content: flex-start;
+    }
+    footer .bloque2 {
+        flex-direction: column;
+        gap: 2em;
+
+        border-top: none;
+        font-size: 11px;
+    }
+    footer .bloque2 > * {
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width: 768px) {
+    header {
+        height: 3.5em;
+    }
+    .porfin {
+        height: 6.6em;
+        background-repeat: no-repeat ;
+        background-size: cover;
+    }
+    .nikeInvincible{
+        padding-top: 1.3em;
+    }
+    .nikeInvincible .text p {
+        font-size: 16px;
+    }    
+    /* ------------------ULTIMOS LANZAMIENTOS---------------------------- */
+    .ultimosLanzamientos .container {
+        flex-direction: column;
+        gap: .5em;
+    }
+    .ultimosLanzamientos .container > *{
+        width: 100%;
+        height: 100vh;
+    }
+    /* ---------------------NOVEDAES----------------- */
+    .novedades .container:last-child{
+        display: none;
+    }
+    /* ------------------------MAXXED OUT--------------------- */
+    .maxxed .imgMaxxed{
+        background-image: url(img/maxxed2.webp);
+        height: 100vh;
+    }
+    /* -----------------------------------COMPRAR POR GENERO---------------------------------- */
+    .genero .container {
+        flex-direction: column;
+        gap: .5em;
+    }
+    .genero .container .hijo{
+        height: 70vh;
+        width: 100%;
+        background-position: top;
+    }
+    /* ------------------NUESTROS ICONOS------------------------- */
+    .nuestrosIconos .container .hijo {
+        height: 28em;
+    }
+    .nuestrosIconos .container {
+        flex-direction: column;
+    }
+    .nuestrosIconos .container .hijo {
+        height: 30em;
+        width: 100%;
+        background-position: top center;
+    }
+}
+@media screen and (max-width: 480px) {
+    .porfin {
+        height: 20vh;
+        background-repeat: no-repeat ;
+        background-size: cover;
+    }
+    /* ------------------------MAXXED OUT--------------------- */
+    .maxxed .imgMaxxed{
+        height: 50vh;
+    }
+    /* ------------------ULTIMOS LANZAMIENTOS---------------------------- */
+    .ultimosLanzamientos .container .generation,
+    .ultimosLanzamientos .container .jordan{
+        height: 70vh;
+    }
+}
