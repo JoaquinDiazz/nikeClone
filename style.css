@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
 .titulo{
     font-size: 45px;
     font-weight: bolder;
@@ -83,11 +84,26 @@ header .bloque2 nav ul {
     display: flex;
     gap: 1.5em;
 }
-header .bloque2 nav ul .close {
+header .bloque2 nav ul .logoYClose {
     display: none;
 }
 header .bloque2 nav ul li {
     list-style-type: none;
+    position: relative;
+}
+header .bloque2 nav ul li::after {
+    content: "";
+    position: absolute;
+    bottom: -.5em;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    opacity: 0;
+    transition: .2s;
+}
+header .bloque2 nav ul li:hover::after {
+    opacity: 1;
 }
 header .bloque2 nav ul li a {
     text-decoration: none;
@@ -136,11 +152,11 @@ header .bloque2  .icons p i {
 }
 /*------------------------- VIDEO POR FIN-------------------- */
 .porfin {
-    height: 50vh;
+    height: 18.6em;
     width: 100%;
     background-image: url(img/porfin.gif);
     background-position:center ;
-    background-size: contain;
+    background-size: co;
 }
 /* -------------------NIKE INVINCIBLE------------------------ */
 .nikeInvincible{
@@ -301,6 +317,7 @@ header .bloque2  .icons p i {
     width: calc(100% / 2 - .5em);
     height: 110vh;
     background-size: cover;
+    background-position: center;
     position: relative;
 }
 .nuestrosIconos .container .airForce {
@@ -468,30 +485,39 @@ footer .bloque2 .copyright {
     }
     header .bloque2 nav {
         display: none;
-    }
-    header .bloque2 nav.active {
-        opacity: 1;
-        visibility: visible;
+        padding: 0 20px;
         position: absolute;
         top: 0;
+        left: 0;
         background-color: white;
         width: 70%;
         height: 100vh;
-        border: 2px solid black;
+    }
+    header .bloque2 nav.active {
+        display: block;
+        opacity: 1;
+        visibility: visible;
     }
     header .bloque2 nav.active ul {
-        padding: 1em;
         flex-direction: column;
         position: relative;
     }
-    header .bloque2 nav.active ul .close {
+    header .bloque2 nav.active ul .logoYClose {
         display: block;
-        position: absolute;
-        right: 1em;
-        top: 1em;
+        height: 3.75em;
+        border-bottom: .5px solid #7e7e7e;
     } 
-    header .bloque2 nav.active ul .close i {
-        height: 30px;
+    header .bloque2 nav.active ul .logoYClose .close {
+        font-size: 1em;
+    }
+    header .bloque2 nav.active ul .logoYClose .logo2 {
+    }
+    header .bloque2 nav ul li a{
+        font-size: 1.25em;
+        font-weight: 500;
+    }
+    header .bloque2 nav ul li::after {
+        content: none;
     }
     header .bloque2 .menu {
         display: block;
@@ -594,9 +620,11 @@ footer .bloque2 .copyright {
         height: 3.5em;
     }
     .porfin {
-        height: 6.6em;
-        background-repeat: no-repeat ;
-        background-size: cover;
+        height: 6.3em;
+    }
+    /* -------------------NIKE INVINCIBLE------------------------ */
+    .nikeInvincible .img{
+        height: 19em;
     }
     .nikeInvincible{
         padding-top: 1.3em;
@@ -614,8 +642,11 @@ footer .bloque2 .copyright {
         height: 100vh;
     }
     /* ---------------------NOVEDAES----------------- */
-    .novedades .container:last-child{
+    .novedades .max90{
         display: none;
+    }
+    .novedades .card{
+        width: calc(100% / 2 - .8em);
     }
     /* ------------------------MAXXED OUT--------------------- */
     .maxxed .imgMaxxed{
@@ -642,22 +673,41 @@ footer .bloque2 .copyright {
     .nuestrosIconos .container .hijo {
         height: 30em;
         width: 100%;
-        background-position: top center;
+        background-position: center;
+    }
+}
+@media screen and (max-width: 553px) { 
+    header .bloque2 nav {
+        width: 100%;
+    }
+    /* ---------------------NOVEDAES----------------- */
+    .novedades .container .card .cardImg{
+        height: 12em;
     }
 }
 @media screen and (max-width: 480px) {
     .porfin {
-        height: 20vh;
-        background-repeat: no-repeat ;
-        background-size: cover;
+        height: 4em;
     }
     /* ------------------------MAXXED OUT--------------------- */
     .maxxed .imgMaxxed{
-        height: 50vh;
+        height: 21.5em;
     }
     /* ------------------ULTIMOS LANZAMIENTOS---------------------------- */
     .ultimosLanzamientos .container .generation,
     .ultimosLanzamientos .container .jordan{
-        height: 70vh;
+        height: 26.25em;
+    }
+    /* ---------------------NOVEDAES----------------- */
+    .novedades .container .card .cardImg{
+        height: 10em;
+    }
+    /* -----------------------------------COMPRAR POR GENERO---------------------------------- */
+    .genero .container .hijo{
+        height: 26.25em;
+    }
+    /* ------------------NUESTROS ICONOS------------------------- */
+    .nuestrosIconos .container .hijo{
+        height: 26.25em;
     }
 }
