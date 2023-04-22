@@ -84,9 +84,6 @@ header .bloque2 nav ul {
     display: flex;
     gap: 1.5em;
 }
-header .bloque2 nav ul .logoYClose {
-    display: none;
-}
 header .bloque2 nav ul li {
     list-style-type: none;
     position: relative;
@@ -109,7 +106,8 @@ header .bloque2 nav ul li a {
     text-decoration: none;
     color: black;
 }
-header .bloque2 .menu {
+header .bloque2 .open, 
+header .bloque2 .close {
     display: none;
 }
 header .bloque2  .icons {
@@ -126,6 +124,9 @@ header .bloque2  .icons .search {
 }
 header .bloque2  .icons i {
     font-size: 18px;
+}
+header .bloque2  .icons .bi-bag {
+    color: black;
 }
 header .bloque2  .icons p {
     cursor: pointer;
@@ -149,6 +150,21 @@ header .bloque2  .icons p i {
 }
 .tresCuotas img{
     height: 25px;
+    cursor: pointer;
+}
+/* .tresCuotas .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.tresCuotas .container .parrafos {
+    display: none ;
+    opacity: 0;
+    transition: .5s;
+}
+.tresCuotas .container .parrafos.parrafo-active {
+    display: block;
+    opacity: 1;
 }
 /*------------------------- VIDEO POR FIN-------------------- */
 .porfin {
@@ -156,7 +172,8 @@ header .bloque2  .icons p i {
     width: 100%;
     background-image: url(img/porfin.gif);
     background-position:center ;
-    background-size: co;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 /* -------------------NIKE INVINCIBLE------------------------ */
 .nikeInvincible{
@@ -484,33 +501,35 @@ footer .bloque2 .copyright {
         display: none;
     }
     header .bloque2 nav {
-        display: none;
+        opacity: 0;
+        visibility: hidden;
         padding: 0 20px;
         position: absolute;
         top: 0;
         left: 0;
         background-color: white;
-        width: 70%;
+        width: 0;
         height: 100vh;
+        box-shadow: 0 0 0 100vmax rgba(0,0,0,.5);
+        transition: .3s;
     }
     header .bloque2 nav.active {
-        display: block;
         opacity: 1;
         visibility: visible;
+        width: 70%;
     }
     header .bloque2 nav.active ul {
         flex-direction: column;
-        position: relative;
+        padding-top: 1em;
     }
-    header .bloque2 nav.active ul .logoYClose {
-        display: block;
-        height: 3.75em;
-        border-bottom: .5px solid #7e7e7e;
-    } 
-    header .bloque2 nav.active ul .logoYClose .close {
-        font-size: 1em;
-    }
-    header .bloque2 nav.active ul .logoYClose .logo2 {
+    header .bloque2 nav.active .close {
+        font-size: 1.5em;
+        cursor: pointer;
+        height: 2.5em;
+        display: flex;  
+        justify-content: flex-end;
+        align-items: center;
+        border-bottom: 1px solid #7e7e7e;
     }
     header .bloque2 nav ul li a{
         font-size: 1.25em;
@@ -519,13 +538,15 @@ footer .bloque2 .copyright {
     header .bloque2 nav ul li::after {
         content: none;
     }
-    header .bloque2 .menu {
+    header .bloque2 .open {
         display: block;
         font-size: 30px;
         order: -999;
+        cursor: pointer;
     }
     .porfin {
         height: 35vh;
+        background-size: cover;
     }
     /* -------------------NIKE INVINCIBLE------------------------ */
     .nikeInvincible{
@@ -621,6 +642,7 @@ footer .bloque2 .copyright {
     }
     .porfin {
         height: 6.3em;
+        background-size: cover;
     }
     /* -------------------NIKE INVINCIBLE------------------------ */
     .nikeInvincible .img{
