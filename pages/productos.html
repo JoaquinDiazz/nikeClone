@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Argentina.</title>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- LOGO -->
+    <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <!-- CSS  -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <div class="bloque1">
+            <a href="#"><img src="../img/jordan.svg" alt="jordan" style="width: 1.5em;"></a>
+            <div class="buscar">
+                <p class="textoChiquito">Buscar tienda</p>
+                <p class="textoChiquito">Ayuda</p>
+            </div>
+        </div>
+        <div class="bloque2">
+            <a href="../index.html" class="logo"><h1><img src="../img/logo.svg" alt="logo" style="width: 65px;"></h1></a>
+            <nav class="nav">
+                <i class="bi bi-x-lg close"></i>
+                <ul>
+                    <li><a href="#" class="texto destacado">Desatacados</a></li>
+                    <li><a href="#" class="texto">Hombre</a></li>
+                    <li><a href="#" class="texto">Mujer</a></li>
+                    <li><a href="#" class="texto">Niño/a</a></li>
+                </ul>
+            </nav>
+            <i class="bi bi-list open"></i>
+            <div class="icons">
+                <div class="search">
+                    <i class="bi bi-search"></i>
+                    <p>Buscar</p>
+                </div>
+                <a href="#"><i class="bi bi-bag" id="openCarrito"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- MODAL CARRITO -->
+        <!-- <div class="carrito">
+            <div class="miCompra">
+                <h4>MI COMPRA</h4>
+                <i class="bi bi-x-lg close" id="closeCarrito"></i>
+            </div>
+            <div class="div">
+                <i class="bi bi-bag"></i>
+                <p>Tu carrito está vacio</p>
+            </div>
+        </div> -->
+        <!-- REGISTRATE -->
+        <section class="registrate">
+            <p class="texto">Registrate acá para recibir las últimas novedades de Nike</p>
+            <p class="textoChiquito">Sé el primero en conocer los lanzamientos y ofertas exclusivas</p>
+            <input class="input" type="text" placeholder="Ingresa su email">
+            <p class="peque">Al registrarte, aceptás los <span class="subtitulado">Términos y Condiciones</span> y la <span class="subtitulado">Política de Privacidad y Cookies</span> de Nike.</p>
+            <p class="peque">Tus datos serán administrados por Southbay S.R.L.class</p>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+        <div class="bloque1">
+            <div class="tienda">
+                <h4 class="textoChiquito">BUSCAR TIENDA</h4>
+            </div>
+            <div class="ayuda">
+                <h4 class="textoChiquito">AYUDA</h4>
+                <ul>
+                    <li><a href="#">Envíos y entregas</a></li>
+                    <li><a href="#">Devoluciones</a> </li>
+                    <li><a href="#">Cambios</a> </li>
+                    <li><a href="#">Autogestionar mi devolución</a> </li>
+                    <li><a href="#">Opciones de pago</a> </li>
+                    <li><a href="#">Contactate</a> </li>
+                    <li><a href="#" class="boton">Botón de Arrepentimiento</a> </li>
+                    <li><a href="#" class="ver">Ver todos</a> </li>
+                </ul>
+            </div>
+            <div class="acerca">
+                <h4 class="textoChiquito">ACERCA DE NIKE</h4>
+                <ul>
+                    <li><a href="#">Noticias</a> </li>
+                    <li><a href="#">Inversionistas</a> </li>
+                    <li><a href="#">Sustentabilidad</a> </li>
+                </ul>
+            </div>
+            <div class="preciosJustos">
+                <img src="../img/preciosJustos.webp" alt="precios justos" style="width: 105px;">
+            </div>
+            <div class="redes">
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            </div>
+        </div>
+        <div class="bloque2">
+            <div>
+                <a href="#" class="argentina"><p><i class="bi bi-geo-alt-fill"></i>Argentina</p></a>
+                <p class="copyright">© 2023 Southbay S.R.L. Todos los derechos reservados.</p>
+            </div>
+            <div>
+                <p><a href="#" class="terminos">Términos y Condiciones</a> </p>
+                <p><a href="#" class="politica">Política de privacidad y cookies</a> </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="../main.js"></script>
+</body>
+</html>
