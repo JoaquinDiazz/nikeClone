@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <div class="bloque1">
             <a href="#"><img src="./img/jordan.svg" alt="jordan" style="width: 1.5em;"></a>
@@ -41,14 +40,23 @@
                     <i class="bi bi-search"></i>
                     <p>Buscar</p>
                 </div>
-                <a href="#"><i class="bi bi-bag"></i></a>
+                <a href="#"><i class="bi bi-bag" id="openCarrito"></i></a>
             </div>
         </div>
-        
     </header>
 
     <main>
-
+        <!-- MODAL CARRITO -->
+        <div class="carrito">
+            <div class="miCompra">
+                <h4>MI COMPRA</h4>
+                <i class="bi bi-x-lg close" id="closeCarrito"></i>
+            </div>
+            <div class="div">
+                <i class="bi bi-bag"></i>
+                <p>Tu carrito está vacio</p>
+            </div>
+        </div>
         <!-- CARRUSEL TRES CUOTAS -->
         <div class="tresCuotas">
             <img src="./img/left.png" alt="arrow" class="leftArrow">
@@ -158,7 +166,6 @@
                     </div>
                 </div>
             </div>
-            
         </section>
         <!-- Nuestros Íconos -->
         <section class="nuestrosIconos">

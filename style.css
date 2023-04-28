@@ -120,13 +120,15 @@ header .bloque2  .icons .search {
     padding: .6em 4em .6em 1em;
     border-radius: 25px;
     display: flex;
-    gap: .5em;
+    align-items: center;
+    gap: .8em;
 }
 header .bloque2  .icons i {
-    font-size: 18px;
+    font-size: 1.3em;
 }
 header .bloque2  .icons .bi-bag {
     color: black;
+    font-weight: 900;
 }
 header .bloque2  .icons p {
     cursor: pointer;
@@ -138,6 +140,46 @@ header .bloque2  .icons p i {
     color: black;
     height: 2em;
     margin-right: .5em;
+}
+/* -----------------MODAL CARRITO ------------------*/
+.carrito {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,.7);
+    width: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+.carrito.active {
+    opacity: 1;
+    visibility: visible;
+    width: 40%;
+}
+.carrito .miCompra {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    border-bottom: 1px solid #c5c2c2;
+}
+.carrito .miCompra .close {
+    cursor: pointer;
+}
+.carrito .div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+.carrito .div .bi-bag {
+    font-size: 3.5em;
 }
 /* ----------------3 CUOTAS CARRUSEL--------------------- */
 .tresCuotas {
@@ -492,8 +534,10 @@ footer .bloque2 .copyright {
     header .bloque2 .logo {
         height: 40px;
     }
+    header .bloque2  .icons {
+        gap: .75em;
+    }
     header .bloque2  .icons .search {
-        background-color: none;
         padding: 0;
         border-radius: none;
     }
@@ -507,9 +551,9 @@ footer .bloque2 .copyright {
         position: absolute;
         top: 0;
         left: 0;
-        background-color: white;
-        width: 0;
         height: 100vh;
+        width: 0;
+        background-color: white;
         box-shadow: 0 0 0 100vmax rgba(0,0,0,.5);
         transition: .3s;
     }
@@ -544,6 +588,11 @@ footer .bloque2 .copyright {
         order: -999;
         cursor: pointer;
     }
+    /* MODAL CARRITO */
+    .carrito.active {
+        width: 70%;
+    }
+    /* GIF  */
     .porfin {
         height: 35vh;
         background-size: cover;
@@ -640,6 +689,13 @@ footer .bloque2 .copyright {
     header {
         height: 3.5em;
     }
+    header .bloque2  .icons .search {
+        gap: 2em;
+    }
+    /* MODAL CARRITO */
+    .carrito.active {
+        width: 90%;
+    }
     .porfin {
         height: 6.3em;
         background-size: cover;
@@ -705,6 +761,10 @@ footer .bloque2 .copyright {
     /* ---------------------NOVEDAES----------------- */
     .novedades .container .card .cardImg{
         height: 12em;
+    }
+    /* FOOTER */
+    footer .bloque2 > * {
+        flex-direction: column;
     }
 }
 @media screen and (max-width: 480px) {
