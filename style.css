@@ -4,7 +4,11 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-
+/* SE APLICA CON JS AL BODY PARA Q CUANDO SE ABRA EL MODAL NO SE PUEDA INTERACTUAR CON EL FONDO */
+.modalAbierto {
+    pointer-events: none;
+    overflow: hidden;
+}
 .titulo{
     font-size: 45px;
     font-weight: bolder;
@@ -33,6 +37,7 @@ footer {
     border: none;
     background-color: black;
     color: white;
+    cursor: pointer;
 }
 /* WHITE BUTTON */
 .whitekBtn {
@@ -43,6 +48,7 @@ footer {
     border: none;
     color: black;
     background-color: white;
+    cursor: pointer;
 }
 header {
     display: flex;
@@ -141,6 +147,9 @@ header .bloque2  .icons p i {
     height: 2em;
     margin-right: .5em;
 }
+header .nav .divContainer .div {
+    display: none;
+} 
 /* -----------------MODAL CARRITO ------------------*/
 .carrito {
     position: fixed;
@@ -151,7 +160,9 @@ header .bloque2  .icons p i {
     background-color: white;
     box-shadow: 0 0 0 100vmax rgba(0,0,0,.7);
     width: 0;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     opacity: 0;
     visibility: hidden;
     transition: .5s;
@@ -160,17 +171,20 @@ header .bloque2  .icons p i {
     opacity: 1;
     visibility: visible;
     width: 40%;
+    pointer-events: all;
 }
-.carrito .miCompra {
+.carrito .miCompra .titulo{
     display: flex;
     justify-content: space-between;
     padding: 1em;
     border-bottom: 1px solid #c5c2c2;
+    font-size: 1em;
 }
-.carrito .miCompra .close {
+.carrito .miCompra .titulo .close {
     cursor: pointer;
 }
-.carrito .div {
+/* CUANDO EL CARRITO ESTE VACIO */
+.carrito .carritoVacio {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -178,8 +192,73 @@ header .bloque2  .icons p i {
     justify-content: center;
     gap: 1em;
 }
-.carrito .div .bi-bag {
+.carrito .carritoVacio .bi-bag {
     font-size: 3.5em;
+}
+/* CUANDO EL CARRITO ESTE CON PRODUCTOS */
+.carrito .miCompra .compra {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-inline: 1em;
+}
+.carrito .miCompra .compra .producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid #dfdcdc;
+}
+.carrito .miCompra .compra .producto img{
+    width: 5.5em;
+    border-radius: .3em;
+}
+.carrito .miCompra .compra .producto .detalles {
+    height: 5.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 12px;
+}
+.carrito .miCompra .compra .producto .detalles .cantidadProducto {
+    display: flex;
+    justify-content: space-between;
+    width: 143px;
+    padding: .5em .5em;
+    border: 1px solid #dfdcdc;
+    border-radius: 25px;
+    font-size: 1.2em;
+}
+.carrito .miCompra .compra .producto .eliminar {
+    height: 5.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.carrito .miCompra .compra .producto .eliminar i {
+    font-size: 1.1em;
+}
+.carrito .miCompra .compra .producto .eliminar p {
+    font-size: .8em;
+    font-weight:bold ;
+}
+.carrito .precio {
+    background-color: #f5f5f5;
+    padding: 1em;
+}
+.carrito .precio .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+.carrito .precio .button {
+    text-align: center;
+    padding-top: 2em;
 }
 /* ----------------3 CUOTAS CARRUSEL--------------------- */
 .tresCuotas {
@@ -208,14 +287,10 @@ header .bloque2  .icons p i {
     display: block;
     opacity: 1;
 }
-/*------------------------- VIDEO POR FIN-------------------- */
-.porfin {
-    height: 18.6em;
+/*------------------------- GIF POR FIN-------------------- */
+.gif {
+    object-fit: cover;
     width: 100%;
-    background-image: url(img/porfin.gif);
-    background-position:center ;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 /* -------------------NIKE INVINCIBLE------------------------ */
 .nikeInvincible{
@@ -468,6 +543,9 @@ footer .bloque2 .politica:hover {
 footer .bloque1 .ayuda .boton {
     color: white;
 }
+footer .bloque1 .ayuda .signos {
+    display: none;
+}
 footer .bloque1 .ayuda .ver {
     text-decoration: underline;
 }
@@ -516,6 +594,192 @@ footer .bloque2 .argentina {
 footer .bloque2 .copyright {
     color: #7e7e7e;
 }
+/* ---------------------PAGE PRODUCTOS------------------------------------- */
+.containerFiltrar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1.5em;
+    border-bottom: 1px solid #dfdcdc;
+    border-top: 1px solid #dfdcdc;
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+}
+.containerFiltrar > * {
+    padding-block: .7em;
+}
+.containerFiltrar .filtrar {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    cursor: pointer;
+}
+.containerFiltrar .ordenarPor img {
+    transform: rotate(-90deg);
+}
+.containerFiltrar .filtrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #dfdcdc;
+    border-left: 1px solid #dfdcdc;
+    width: calc(100% / 3);
+}
+.containerFiltrar .ordenarPor .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    position: relative;
+    cursor: pointer;
+}
+/* MODAL ORDENAR POR */
+.containerFiltrar .ordenarPor .modaLordenar {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: -7em;
+    right: -3.5;
+    border: 1px solid #dfdcdc;
+    background-color: white;
+    color: #7e7e7e;
+    font-size: 14px;
+    width: 120px;
+}
+.containerFiltrar .ordenarPor .modaLordenar.active {
+    opacity: 1;
+    visibility: visible;
+}
+.containerFiltrar .ordenarPor .modaLordenar > * {
+    padding: .5em;
+}
+.containerFiltrar .ordenarPor .modaLordenar p:hover {
+    color: black;
+    cursor: pointer;
+}
+/* MODAL FILTROS  */
+.modalFiltros {
+    background-color: white;
+    z-index: 100;
+    width: 0;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,.5);
+    display: flex;
+    flex-direction:column ;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+.modalFiltros.active {
+    opacity: 1;
+    visibility: visible;
+    width: 40%;
+    pointer-events: all;
+}
+.modalFiltros .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    font-size: 1.4em;
+    border-bottom: 1px solid #dfdcdc;
+}
+.modalFiltros .titulo i {
+    cursor: pointer;
+}
+.modalFiltros .container  {
+    padding-inline: 1em;
+    display: flex;
+    flex-direction:column ;
+}    
+.modalFiltros .container .filtro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-block: 1em;
+    border-bottom: 1px solid #dfdcdc;
+    font-weight: 600;
+}
+.modalFiltros .container .filtro .items {
+    list-style-type: none;
+    padding: .5em 0 0 .8em;
+    font-weight: normal;
+    font-size: .9em;
+    display: flex;
+    flex-direction: column;
+}
+.modalFiltros .botones {
+    display: flex;
+    padding: .7em;
+    gap: .5em;
+}
+.modalFiltros .botones button {
+    width: 50%;
+}
+.modalFiltros .botones .whitekBtn {
+    border: 1px solid black;
+}
+/*------------------- CARDS DE PRDUCTOS --------------------*/
+.sectionProductos {
+    padding: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+.sectionProductos .cardProducto {
+    width: 18em;
+    min-width: 15em;
+    border-radius: .5em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow: hidden;
+    transition: .5s;
+}
+.sectionProductos .cardProducto:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: translateY(-5px);
+}
+.sectionProductos .cardProducto img {
+    width: 100%;
+}
+.sectionProductos .cardProducto .cardBody {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: .3em;
+}
+.sectionProductos .cardProducto .cardBody .nombre  {
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+.sectionProductos .cardProducto .cardBody .descripcion {
+    color: gray;
+}
+.sectionProductos .cardProducto .cardBody div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sectionProductos .cardProducto .cardBody div .precio {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.sectionProductos .cardProducto .cardBody div button {
+    padding: 5px 10px;
+    border-radius: .3em;
+}
+
+
 /* ----------------------MEDIA QUERIES------------------------ */
 @media screen and (max-width: 1025px){
     section,
@@ -545,26 +809,28 @@ footer .bloque2 .copyright {
         display: none;
     }
     header .bloque2 nav {
-        opacity: 0;
-        visibility: hidden;
         padding: 0 20px;
         position: absolute;
         top: 0;
         left: 0;
-        height: 100vh;
         width: 0;
         background-color: white;
         box-shadow: 0 0 0 100vmax rgba(0,0,0,.5);
-        transition: .3s;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
     }
     header .bloque2 nav.active {
         opacity: 1;
         visibility: visible;
         width: 70%;
+        height: 100vh;
+        pointer-events: all;
     }
     header .bloque2 nav.active ul {
         flex-direction: column;
         padding-top: 1em;
+        pointer-events: all;
     }
     header .bloque2 nav.active .close {
         font-size: 1.5em;
@@ -573,7 +839,7 @@ footer .bloque2 .copyright {
         display: flex;  
         justify-content: flex-end;
         align-items: center;
-        border-bottom: 1px solid #7e7e7e;
+        border-bottom: 1px solid #dfdcdc;
     }
     header .bloque2 nav ul li a{
         font-size: 1.25em;
@@ -588,14 +854,42 @@ footer .bloque2 .copyright {
         order: -999;
         cursor: pointer;
     }
+    header .nav .divContainer .div {
+        display: block;
+    } 
+    header .nav .div {
+        display: flex;
+        flex-direction: column;
+    }
+    header .nav .div > * {
+        display: flex;
+        align-items: center;
+    }
+    header .nav .div .jordan {
+        padding-block: 2.4em;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+    header .nav .div .tienda, 
+    header .nav .div .ayuda {
+        display: flex;
+        align-items: center;
+        gap: .5em;
+        cursor: pointer;
+        margin-bottom: 1em;
+    }
+    header .nav .div .tienda i, 
+    header .nav .div .ayuda i {
+        font-size: 1.2em;
+    }
+    header .nav .div .tienda p, 
+    header .nav .div .ayuda p{
+        font-size: 12px;
+        font-weight: bold;
+    }
     /* MODAL CARRITO */
     .carrito.active {
         width: 70%;
-    }
-    /* GIF  */
-    .porfin {
-        height: 35vh;
-        background-size: cover;
     }
     /* -------------------NIKE INVINCIBLE------------------------ */
     .nikeInvincible{
@@ -647,6 +941,10 @@ footer .bloque2 .copyright {
     .nuestrosIconos .container .hijo {
         height: 28em;
     }
+    /* FILTROS */
+    .containerFiltrar {
+        top: 56px;
+    }
     /* --------------------------------FOOTER------------------------------ */
     footer .bloque1 {
         flex-direction: column;
@@ -656,15 +954,13 @@ footer .bloque2 .copyright {
     footer .bloque1 > * {
         width: 100%;
     }
-    footer .bloque1 .tienda,
-    footer .bloque1 .acerca,
-    footer .bloque1 .ayuda {
+    footer .bloque1 .tienda h4,
+    footer .bloque1 .acerca h4 {
         border-bottom:1px solid #1d1e1e;
         padding: 1em 1em 1em 0;
     }
     footer .bloque1 .tienda ul,
-    footer .bloque1 .acerca ul,
-    footer .bloque1 .ayuda ul {
+    footer .bloque1 .acerca ul {
         display: none;
     }
     footer .bloque1 .redes,
@@ -673,6 +969,29 @@ footer .bloque2 .copyright {
     }
     footer .bloque1 .redes {
         justify-content: flex-start;
+    }
+    /* ACORDEON DE AYUDA */
+    footer .bloque1 .ayuda .headerAcordeon {
+        border-bottom:1px solid #1d1e1e;
+        padding: 1em 1em 1em 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+    footer .bloque1 .ayuda .bodyAcordeon {
+        padding: 0em;
+        height: 0;
+        overflow: hidden;
+        transition: .5s;
+    }
+    footer .bloque1 .ayuda .bodyAcordeon.active {
+        display: block;
+        padding: .5em;
+        height: fit-content;
+    }
+    footer .bloque1 .ayuda .signos {
+        display: block;
     }
     footer .bloque2 {
         flex-direction: column;
@@ -695,10 +1014,6 @@ footer .bloque2 .copyright {
     /* MODAL CARRITO */
     .carrito.active {
         width: 90%;
-    }
-    .porfin {
-        height: 6.3em;
-        background-size: cover;
     }
     /* -------------------NIKE INVINCIBLE------------------------ */
     .nikeInvincible .img{
@@ -753,6 +1068,10 @@ footer .bloque2 .copyright {
         width: 100%;
         background-position: center;
     }
+    /* MODAL FILTROS */
+    .modalFiltros.active {
+        width: 80%;
+    }
 }
 @media screen and (max-width: 553px) { 
     header .bloque2 nav {
@@ -768,9 +1087,6 @@ footer .bloque2 .copyright {
     }
 }
 @media screen and (max-width: 480px) {
-    .porfin {
-        height: 4em;
-    }
     /* ------------------------MAXXED OUT--------------------- */
     .maxxed .imgMaxxed{
         height: 21.5em;
