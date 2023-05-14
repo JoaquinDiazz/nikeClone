@@ -132,10 +132,23 @@ header .bloque2  .icons .search {
 header .bloque2  .icons i {
     font-size: 1.3em;
 }
-header .bloque2  .icons .bi-bag {
+header .bloque2  .icons .carritoItem .bi-bag {
     color: black;
     font-weight: 900;
+    position: relative;
 }
+header .bloque2  .icons .carritoItem .bi-bag span {
+    background-color: black;
+    color: white;
+    padding: .3em .5em;
+    border-radius: 50%;
+    font-size: .8em;
+    font-family: monospace;
+    position: absolute;
+    top: -10px;
+    right: -15px;
+}
+
 header .bloque2  .icons p {
     cursor: pointer;
     color: gray;
@@ -166,6 +179,7 @@ header .nav .divContainer .div {
     opacity: 0;
     visibility: hidden;
     transition: .5s;
+    overflow: auto;
 }
 .carrito.active {
     opacity: 1;
@@ -177,8 +191,11 @@ header .nav .divContainer .div {
     display: flex;
     justify-content: space-between;
     padding: 1em;
+    background-color: white;
     border-bottom: 1px solid #c5c2c2;
     font-size: 1em;
+    position: sticky;
+    top: 0;
 }
 .carrito .miCompra .titulo .close {
     cursor: pointer;
@@ -196,6 +213,7 @@ header .nav .divContainer .div {
     font-size: 3.5em;
 }
 /* CUANDO EL CARRITO ESTE CON PRODUCTOS */
+
 .carrito .miCompra .compra {
     display: flex;
     flex-direction: column;
@@ -240,6 +258,7 @@ header .nav .divContainer .div {
 }
 .carrito .miCompra .compra .producto .eliminar i {
     font-size: 1.1em;
+    cursor: pointer;
 }
 .carrito .miCompra .compra .producto .eliminar p {
     font-size: .8em;
@@ -248,6 +267,8 @@ header .nav .divContainer .div {
 .carrito .precio {
     background-color: #f5f5f5;
     padding: 1em;
+    position: sticky;
+    bottom: 0;
 }
 .carrito .precio .total {
     display: flex;
@@ -259,6 +280,11 @@ header .nav .divContainer .div {
 .carrito .precio .button {
     text-align: center;
     padding-top: 2em;
+}
+.carrito .compra.disabled,
+.carrito .carritoVacio.disabled,
+.carrito .precio.disabled {
+    display: none;
 }
 /* ----------------3 CUOTAS CARRUSEL--------------------- */
 .tresCuotas {
@@ -623,7 +649,6 @@ footer .bloque2 .copyright {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid #dfdcdc;
     border-left: 1px solid #dfdcdc;
     width: calc(100% / 3);
 }
@@ -633,32 +658,6 @@ footer .bloque2 .copyright {
     justify-content: center;
     gap: .5em;
     position: relative;
-    cursor: pointer;
-}
-/* MODAL ORDENAR POR */
-.containerFiltrar .ordenarPor .modaLordenar {
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    bottom: -7em;
-    right: -3.5;
-    border: 1px solid #dfdcdc;
-    background-color: white;
-    color: #7e7e7e;
-    font-size: 14px;
-    width: 120px;
-}
-.containerFiltrar .ordenarPor .modaLordenar.active {
-    opacity: 1;
-    visibility: visible;
-}
-.containerFiltrar .ordenarPor .modaLordenar > * {
-    padding: .5em;
-}
-.containerFiltrar .ordenarPor .modaLordenar p:hover {
-    color: black;
     cursor: pointer;
 }
 /* MODAL FILTROS  */
@@ -676,6 +675,7 @@ footer .bloque2 .copyright {
     bottom: 0;
     opacity: 0;
     visibility: hidden;
+    overflow-y: auto;
     transition: .5s;
 }
 .modalFiltros.active {
@@ -708,24 +708,46 @@ footer .bloque2 .copyright {
     border-bottom: 1px solid #dfdcdc;
     font-weight: 600;
 }
-.modalFiltros .container .filtro .items {
+.modalFiltros .container .filtro .headerAcordeon {
+    cursor: pointer;
+}
+.modalFiltros .container .filtro .contenidoAcordeon {
     list-style-type: none;
     padding: .5em 0 0 .8em;
     font-weight: normal;
     font-size: .9em;
     display: flex;
     flex-direction: column;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
 }
-.modalFiltros .botones {
+.modalFiltros .container .filtro .contenidoAcordeon.active {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+}
+.modalFiltros .container .filtro .contenidoAcordeon div {
     display: flex;
-    padding: .7em;
-    gap: .5em;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: .5em;
+    row-gap: 1em;
+    cursor: pointer;
 }
-.modalFiltros .botones button {
-    width: 50%;
+.modalFiltros .container .filtro .contenidoAcordeon .btnFiltro{
+    cursor: pointer;
+    padding: .3em;
+    transition: .3s;
 }
-.modalFiltros .botones .whitekBtn {
-    border: 1px solid black;
+.modalFiltros .container .filtro .contenidoAcordeon .btnFiltro:hover, 
+.modalFiltros .container .filtro .contenidoAcordeon .btnFiltro.active {
+    background-color: black;
+    color: white;
+}
+.modalFiltros .container .limpiarFiltros {
+    margin: 1em;
 }
 /*------------------- CARDS DE PRDUCTOS --------------------*/
 .sectionProductos {
@@ -959,10 +981,10 @@ footer .bloque2 .copyright {
         border-bottom:1px solid #1d1e1e;
         padding: 1em 1em 1em 0;
     }
-    footer .bloque1 .tienda ul,
+    /* footer .bloque1 .tienda ul,
     footer .bloque1 .acerca ul {
         display: none;
-    }
+    } */
     footer .bloque1 .redes,
     footer .bloque1 .preciosJustos {
         padding-top: 1.5em;

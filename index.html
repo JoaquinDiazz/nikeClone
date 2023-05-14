@@ -24,11 +24,11 @@
             </div>
         </div>
         <div class="bloque2">
-            <a href="../index.html" class="logo"><h1><img src="../img/logo.svg" alt="logo" style="width: 65px;"></h1></a>
+            <a href="../index.html" class="logo"><h1><img src="./img/logo.svg" alt="logo" style="width: 65px;"></h1></a>
             <nav class="nav">
                 <i class="bi bi-x-lg close"></i>
                 <ul>
-                    <li><a href="#" class="texto destacado">Desatacados</a></li>
+                    <li><a href="./pages/productos.html" class="texto destacado">Desatacados</a></li>
                     <li><a href="#" class="texto">Hombre</a></li>
                     <li><a href="#" class="texto">Mujer</a></li>
                     <li><a href="#" class="texto">Niño/a</a></li>
@@ -69,39 +69,24 @@
                     <h4>MI COMPRA</h4>
                     <i class="bi bi-x-lg close" id="closeCarrito"></i>
                 </div>
-                <!-- <div class="compra">
-                    <div class="producto">
-                        <img src="../img/pageProductos/nikeDriFit.webp" alt="">
-                        <div class="detalles">
-                            <p>Jordan Essential</p>
-                            <p>Remera Jordan para Mujer</p>
-                            <div class="cantidadProducto">
-                                <i class="bi bi-plus-lg"></i>
-                                <span>1</span>
-                                <i class="bi bi-dash-lg"></i>
-                            </div>
-                        </div>
-                        <div class="eliminar">
-                            <i class="bi bi-trash"></i>
-                            <p>$32999</p>
-                        </div>
-                    </div>
-                </div> -->
+                <div class="compra disabled" id="compra">
+                    <!-- SE COMPLETA CON JS -->
+                </div>
             </div>
-            <div class="carritoVacio">
+            <div class="carritoVacio" id="carritoVacio">
                 <i class="bi bi-bag"></i>
                 <p>Tu carrito está vacio</p>
             </div>
 
-            <!-- <div class="precio">
+            <div class="precio disabled"  id="precioTotal">
                 <div class="total">
                     <p>Total</p>
-                    <p>$32999</p>
+                    <p id="total">$</p> 
                 </div>
                 <div class="button">
                     <button class="blackBtn">FINALIZAR COMPRA</button>
                 </div>
-            </div> -->
+            </div>
         </div>
         <!-- CARRUSEL TRES CUOTAS -->
         <div class="tresCuotas">
@@ -138,13 +123,17 @@
                 <div class="generation">
                     <div class="text">
                         <h3 class="subTitulo">Generation Pack</h3>
-                        <button class="blackBtn">Comprar</button>
+                        <a href="./pages/productos.html">
+                            <button class="blackBtn">Comprar</button>
+                        </a>
                     </div>
                 </div>
                 <div class="jordan">
                     <div class="text">
                         <h3 class="subTitulo">Jordan</h3>
-                        <button class="whitekBtn">Comprar</button>
+                        <a href="./pages/productos.html">
+                            <button class="whitekBtn">Comprar</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -185,7 +174,9 @@
             <div class="text">
                 <p class="subTitulo">Air Max</p>
                 <h3 class="titulo">MAXXED OUT</h3>
-                <button class="blackBtn">Comprar</button>
+                <a href="./pages/productos.html">
+                    <button class="blackBtn">Comprar</button>
+                </a>
             </div>
         </section>
 
@@ -196,19 +187,25 @@
                 <div class="hijo hombre">
                     <div class="text">
                         <h3 class="subTitulo">Hombre</h3>
-                        <button class="blackBtn">Comprar</button>
+                        <a href="./pages/productos.html">
+                            <button class="blackBtn">Comprar</button>
+                        </a>
                     </div>
                 </div>
                 <div class="hijo mujer">
                     <div class="text">
                         <h3 class="subTitulo">Mujer</h3>
-                        <button class="blackBtn">Comprar</button>
+                        <a href="./pages/productos.html">
+                            <button class="blackBtn">Comprar</button>
+                        </a>
                     </div>
                 </div>
                 <div class="hijo niños">
                     <div class="text">
                         <h3 class="subTitulo">Niño/a</h3>
-                        <button class="blackBtn">Comprar</button>
+                        <a href="./pages/productos.html">
+                            <button class="blackBtn">Comprar</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -220,13 +217,17 @@
                 <div class="hijo airForce">
                     <div class="text">
                         <p class="subTitulo">Air Force</p>
-                        <button class="blackBtn">Comprar</button>
+                        <a href="./pages/productos.html">
+                            <button class="whitekBtn">Comprar</button>
+                        </a>
                     </div>
                 </div>
                 <div class="hijo dunk">
                     <div class="text">
                         <p class="subTitulo">Dunk</p>
-                        <button class="whitekBtn">Comprar</button>
+                        <a href="./pages/productos.html">
+                            <button class="whitekBtn">Comprar</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -239,18 +240,6 @@
             <p class="peque">Al registrarte, aceptás los <span class="subtitulado">Términos y Condiciones</span> y la <span class="subtitulado">Política de Privacidad y Cookies</span> de Nike.</p>
             <p class="peque">Tus datos serán administrados por Southbay S.R.L.class</p>
         </section>
-        <!-- <div class="carrusel">
-            <div class="grande">
-                <img src="./img/airforce-white.webp" class="imagen" alt="">
-                <img src="./img/airforce-brown.webp" class="imagen" alt="">
-            </div>
-            <div class="puntos">
-                <li class="punto active"></li>
-                <li class="punto"></li>
-            </div>
-        </div> -->
-
-
 
     </main>
     <!-- FOOTER -->
@@ -260,7 +249,9 @@
                 <h4 class="textoChiquito">BUSCAR TIENDA</h4>
             </div>
             <div class="ayuda">
-                <h4 class="textoChiquito">AYUDA</h4>
+                <div class="headerAcordeon">
+                    <h4 class="textoChiquito">AYUDA</h4>
+                </div>
                 <ul>
                     <li><a href="#">Envíos y entregas</a></li>
                     <li><a href="#">Devoluciones</a> </li>
@@ -281,7 +272,7 @@
                 </ul>
             </div>
             <div class="preciosJustos">
-                <img src="img/preciosJustos.webp" alt="precios justos" style="width: 105px;">
+                <img src="../img/preciosJustos.webp" alt="precios justos" style="width: 105px;">
             </div>
             <div class="redes">
                 <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
@@ -301,19 +292,6 @@
             </div>
         </div>
     </footer>
-<!--     
-    <div class="container">
-        <ul class="ul">
-            <li class="li active">boton 1</li>
-            <li class="li">boton 2</li>
-            <li class="li">boton 3</li>
-        </ul>
-        <div class="subcontainer">
-            <div class="bloque active">Lorem 111 ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, sunt. Lorem 111 ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, sunt.</div>
-            <div class="bloque">Lorem 222 ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, sunt.Lorem 111 ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, sunt.</div>
-            <div class="bloque">Lorem 333  ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, sunt.Lorem 111 ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, sunt.</div>
-        </div>
-    </div> -->
 
     <script src="main.js"></script>
 </body>

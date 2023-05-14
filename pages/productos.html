@@ -56,7 +56,9 @@
                     <i class="bi bi-search"></i>
                     <p>Buscar</p>
                 </div>
-                <a href="#"><i class="bi bi-bag" id="openCarrito"></i></a>
+                <a href="#" class="carritoItem">
+                    <i class="bi bi-bag" id="openCarrito"><span class="numerito" id="numeritoCarrito">0</span></i>
+                </a>
             </div>
         </div>
     </header>
@@ -69,39 +71,24 @@
                     <h4>MI COMPRA</h4>
                     <i class="bi bi-x-lg close" id="closeCarrito"></i>
                 </div>
-                <!-- <div class="compra">
-                    <div class="producto">
-                        <img src="../img/pageProductos/nikeDriFit.webp" alt="">
-                        <div class="detalles">
-                            <p>Jordan Essential</p>
-                            <p>Remera Jordan para Mujer</p>
-                            <div class="cantidadProducto">
-                                <i class="bi bi-plus-lg"></i>
-                                <span>1</span>
-                                <i class="bi bi-dash-lg"></i>
-                            </div>
-                        </div>
-                        <div class="eliminar">
-                            <i class="bi bi-trash"></i>
-                            <p>$32999</p>
-                        </div>
-                    </div>
-                </div> -->
+                <div class="compra disabled" id="compra">
+                    <!-- SE COMPLETA CON JS -->
+                </div>
             </div>
-            <div class="carritoVacio">
+            <div class="carritoVacio" id="carritoVacio">
                 <i class="bi bi-bag"></i>
                 <p>Tu carrito está vacio</p>
             </div>
 
-            <!-- <div class="precio">
+            <div class="precio disabled"  id="precioTotal">
                 <div class="total">
                     <p>Total</p>
-                    <p>$32999</p>
+                    <p id="total">$</p> 
                 </div>
                 <div class="button">
                     <button class="blackBtn">FINALIZAR COMPRA</button>
                 </div>
-            </div> -->
+            </div>
         </div>
         
         <!-- CARRUSEL TRES CUOTAS -->
@@ -119,22 +106,10 @@
 
         <!-- FILTROS -->
         <section class="containerFiltrar">
-            <h4>Los más vendidos</h4>
+            <h4 id="tituloDeProductos">Todos los productos</h4>
             <div class="filtrar" id="btnFiltros">
                 <p>Filtrar</p>
                 <img src="../img/filtro.png" width="20px" alt="filtroImg">
-            </div>
-            <div class="ordenarPor">
-                <div id="btnOrdenar" class="button">
-                    <p>Ordenar por</p>
-                    <img src="../img/left.png" alt="Flecha" width="10px">
-                </div>
-                <!-- MODAL ORDENAR POR -->
-                <div class="modaLordenar" id="ordenarPor">
-                    <p>Más Relevante</p>
-                    <p>Mayor Precio</p>
-                    <p>Menor precio</p>
-                </div>
             </div>
         </section>
         <!-- MODAL DE FILTROS -->
@@ -146,43 +121,50 @@
                 </div>
                 <div class="filtros">
                     <div class="filtro">
-                        <p>Genero</p>
-                        <div class="items">
-                            <li><input type="checkbox">Hombre</li>
-                            <li><input type="checkbox">Mujer</li>
-                            <li><input type="checkbox">Unisex</li>
+                        <p class="headerAcordeon">Precío</p>
+                        <div class="contenidoAcordeon">
+                            <p class="btnFiltro genero" id="mujer">Mayor precío</p>
+                            <p class="btnFiltro genero" id="unisex">Menor precío</p>
                         </div>
                     </div>
                     <div class="filtro">
-                        <p>Colecciones</p>
-                        <div class="items">
-                            <li><input type="checkbox">Moda</li>
-                            <li><input type="checkbox">Running</li>
+                        <p class="headerAcordeon">Genero</p>
+                        <div class="contenidoAcordeon">
+                            <p class="btnFiltro genero" id="Hombre">Hombre</p>
+                            <p class="btnFiltro genero" id="Mujer">Mujer</p>
+                            <p class="btnFiltro genero" id="Niño">Niño</p>
+                            <p class="btnFiltro genero" id="Unisex">Unisex</p>
                         </div>
                     </div>
                     <div class="filtro">
-                        <p>Color</p>
-                         <div class="items">
-                            <li><input type="checkbox">Azul</li>
-                            <li><input type="checkbox">Rosa</li>
-                            <li><input type="checkbox">Blanco</li>
-                            <li><input type="checkbox">Negro</li>
+                        <p class="headerAcordeon">Colecciones</p>
+                        <div class="contenidoAcordeon">
+                            <p class="btnFiltro coleccion" id="Moda">Moda</p>
+                            <p class="btnFiltro coleccion" id="Running">Running</p>
+                            <p class="btnFiltro coleccion" id="Futbol">Fútbol</p>
                         </div>
                     </div>
                     <div class="filtro">
-                        <p>Categoría</p>
-                         <div class="items">
-                            <li><input type="checkbox">Calzado</li>
-                            <li><input type="checkbox">Remera</li>
-                            <li><input type="checkbox">Pantalones</li>
-                            <li><input type="checkbox">Accesorios</li>
+                        <p class="headerAcordeon">Color</p>
+                         <div class="contenidoAcordeon">
+                            <p class="btnFiltro color" id="azul">Azul</p>
+                            <p class="btnFiltro color" id="rosa">Rosa</p>
+                            <p class="btnFiltro color" id="negro">Negro</p>
+                            <p class="btnFiltro color" id="blanco">Blanco</p>
+                            <p class="btnFiltro color" id="gris">Gris</p>
                         </div>
                     </div>
+                    <div class="filtro">
+                        <p class="headerAcordeon">Categoría</p>
+                         <div class="contenidoAcordeon">
+                            <p class="btnFiltro categoria" id="Remera">Remera</p>
+                            <p class="btnFiltro categoria" id="Pantalon">Pantalones</p>
+                            <p class="btnFiltro categoria" id="Zapatilla">Zapatilla</p>
+                            <p class="btnFiltro categoria" id="Accesorios">Accesorios</p>
+                        </div>
+                    </div>
+                    <button class="blackBtn limpiarFiltros" id="limpiarFiltros">Limpiar</button>
                 </div>
-            </div>
-            <div class="botones">
-                <button class="whitekBtn">LIMPIAR</button>
-                <button class="blackBtn">APLICAR</button>
             </div>
         </div>
 
@@ -205,28 +187,11 @@
             <div class="tienda">
                 <h4 class="textoChiquito">BUSCAR TIENDA</h4>
             </div>
-            <!-- <div class="ayuda">
-                <h4 class="textoChiquito">AYUDA</h4>
-                <ul>
-                    <li><a href="#">Envíos y entregas</a></li>
-                    <li><a href="#">Devoluciones</a> </li>
-                    <li><a href="#">Cambios</a> </li>
-                    <li><a href="#">Autogestionar mi devolución</a> </li>
-                    <li><a href="#">Opciones de pago</a> </li>
-                    <li><a href="#">Contactate</a> </li>
-                    <li><a href="#" class="boton">Botón de Arrepentimiento</a> </li>
-                    <li><a href="#" class="ver">Ver todos</a> </li>
-                </ul>
-            </div> -->
             <div class="ayuda">
-                <div class="headerAcordeon" id="acordeonHeader">
+                <div class="headerAcordeon">
                     <h4 class="textoChiquito">AYUDA</h4>
-                    <div class="signos">
-                        <i class="bi bi-plus" class="plus"></i>
-                        <!-- <i class="bi bi-dash" class="minus"></i> -->
-                    </div>
                 </div>
-                <ul class="bodyAcordeon" id="acordeonBody">
+                <ul>
                     <li><a href="#">Envíos y entregas</a></li>
                     <li><a href="#">Devoluciones</a> </li>
                     <li><a href="#">Cambios</a> </li>
@@ -267,7 +232,7 @@
         </div>
     </footer>
 
-
     <script src="../main.js"></script>
+    <script src="../carrito.js"></script>
 </body>
 </html>

@@ -1,20 +1,3 @@
-// let grande = document.querySelector(".grande");
-// let punto  = document.querySelectorAll(".punto");
-
-// punto.forEach( (cadaPunto , i) => {
-//     punto[i].addEventListener("click", () => {
-
-//         let posicion = i
-//         let operacion = posicion * -50 
-
-//         grande.style.transform = `translateX(${operacion}%)`;
-
-//         punto.forEach( (cadaPunto , i) => {
-//             punto[i].classList.remove("active")
-//         })
-//         punto[i].classList.add("active")
-//     })
-// })
 // MENU HAMBURGUESA
 const nav         = document.querySelector(".nav");
 const botonAbrir  = document.querySelector(".open");
@@ -65,92 +48,6 @@ function mover(numero) {
     parrafos[value-1].classList.toggle("parrafo-active");
 }
 
-// PRE ENTREGA 2
-
-const Productos = [
-
-    {
-        nombre: "Nike SB Bruin React",
-        color: "Negro",
-        precio: 49000,
-    },
-
-    {
-        nombre: "Nike Court Legacy Canvas",
-        color: "Blanco",
-        precio: 30000,
-    },
-
-    {
-        nombre: "Nike Air Force 1 '07",
-        color: "Blanco",
-        precio: 53000,
-    },
-
-    {
-        nombre: "Nike ZoomX Invincible Run Flyknit 2",
-        color: "Negro",
-        precio: 89000,
-    },
-
-    {
-        nombre: "Nike Dunk Low Retro Premium",
-        color: "Negro",
-        precio: 57000,
-    }
-
-]
-
-// let accion = parseInt(prompt("Bienvenidos a Nike.ar. Que desea realizar? \n1. Mostrar stock \n2.Filtrar por mas caras  \n3.Filtrar por mas baratas \n4.Filtrar por color negro \n5.Filtrar por color blanco"))
-
-
-function mostrarProductos(){
-    Productos.forEach( prodcuto => {
-        console.log(prodcuto.nombre)
-        console.log("Precio: " + prodcuto.precio + " pesos.")
-    });
-}
-
-function caras() {
-    Productos.sort((a,b) => b.precio - a.precio);
-    console.log(Productos)
-}
-
-function baratas() {
-    Productos.sort((a,b) => a.precio - b.precio);
-    console.log(Productos)
-}
-
-function colorNegro() {
-    const negro = Productos.filter((producto) => producto.color === "Negro")
-    console.log(negro);
-}
-
-function colorBlanco() {
-    const blanco = Productos.filter((producto) => producto.color === "Blanco")
-    console.log(blanco);
-}
-
-// switch (accion) {
-//     case 1:
-//         mostrarProductos()
-//         break;
-//     case 2:
-//         caras()
-//         break;
-//     case 3:
-//         baratas()
-//         break;
-//     case 4:
-//         colorNegro()
-//         break;
-//     case 5:
-//         colorBlanco() 
-//         break;
-//     default:
-//         alert("Valor invalido")        
-// }
-
 // MODAL DE FILTROS
 
 const btnAbrirFiltros  = document.querySelector("#btnFiltros");
@@ -167,18 +64,11 @@ btnCerrarFiltros.addEventListener("click", () => {
     document.body.classList.remove("modalAbierto")
 })
 
-// MODAL ORDENAR POR
-const btnOrdenar = document.querySelector("#btnOrdenar")
-const modalOrdenar = document.querySelector("#ordenarPor")
-
-btnOrdenar.addEventListener("click", () => {
-    modalOrdenar.classList.toggle("active")
-})
-
 // ARRAY DE PRODUCTOS
 const productosNike = [
     {
         nombre: "Nike Essential",
+        id: "NikeEssential",
         descripcion: "Pantalón de Running para Hombre",
         precio: 24700,
         color: "gris",
@@ -189,6 +79,7 @@ const productosNike = [
     },
     {
         nombre: "Nike Air",
+        id: "NikeAir",
         descripcion: "Pantalón de Moda para Mujer",
         precio: 32000,
         color: "negro",
@@ -199,6 +90,7 @@ const productosNike = [
     },
     {
         nombre: "Nike Sportswear",
+        id: "NikeSportswear",
         descripcion: "Pantalón de Moda para Mujer",
         precio: 28500,
         color: "rosa",
@@ -206,9 +98,11 @@ const productosNike = [
         genero: "mujer",
         coleccion: "moda",
         tipo:"pantalon",
+
     },
     {
         nombre: "Nike Dri-FIT Phenom",
+        id: "Dri-FITPhenom",
         descripcion: "Pantalón de Running para Hombre",
         precio: 38500,
         color: "negro",
@@ -219,6 +113,7 @@ const productosNike = [
     },
     {
         nombre: "Nike Air Max Excee",
+        id: "NikeAirMaxExcee",
         descripcion: "Zapatillas de Moda para Hombre",
         precio: 50000,
         color: "negro",
@@ -229,9 +124,10 @@ const productosNike = [
     },
     {
         nombre: "Nike Invincible 3",
+        id: "NikeInvincible3",
         descripcion: "Zapatillas de Running para Hombre",
         precio: 89000,
-        color: "blanca",
+        color: "blanco",
         imagen: "../img/pageProductos/nikeInvincible.webp",
         genero: "hombre",
         coleccion: "running",
@@ -239,6 +135,7 @@ const productosNike = [
     },
     {
         nombre: "Nike Zoom Fly 4",
+        id: "NikeZoomFly4",
         descripcion: "Zapatillas de Running para Mujer",
         precio: 78000,
         color: "azul",
@@ -249,6 +146,7 @@ const productosNike = [
     },
     {
         nombre: "Nike Air Zoom 39",
+        id: "NikeAirZoom39",
         descripcion: "Zapatillas de Running para Mujer",
         precio: 57000,
         color: "rosas",
@@ -259,9 +157,10 @@ const productosNike = [
     },
     {
         nombre: "Nike SB",
+        id: "NikeSB",
         descripcion: "Remera de Moda para Hombre",
         precio: 16500,
-        color: "negro",
+        color: "gris",
         imagen: "../img/pageProductos/nikeSB.webp",
         genero: "hombre",
         coleccion: "moda",
@@ -269,16 +168,18 @@ const productosNike = [
     },
     {
         nombre: "Nike Dri-FIT Miler",
+        id: "NikeDri-FITMiler",
         descripcion: "Remera de Running para Hombre",
         precio: 16500,
         color: "negro",
         imagen: "../img/pageProductos/nikeDriFitRemera.webp",
         genero: "hombre",
-        coleccion: "moda",
+        coleccion: "running",
         tipo: "remera",
     },
     {
         nombre: "Jordan Flight",
+        id: "JordanFlight",
         descripcion: "Remera Jordan para Mujer",
         precio: 17000,
         color: "roja",
@@ -289,6 +190,7 @@ const productosNike = [
     },
     {
         nombre: "Nike Sportwear",
+        id: "NikeSportwear",
         descripcion: "Remera de moda para Mujer",
         precio: 10000,
         color: "rosa",
@@ -298,63 +200,104 @@ const productosNike = [
         tipo: "remera",
     },
     {
+        nombre: "Nike Mercurial",
+        id: "NikeMercurial",
+        descripcion: "Botines de Futbol Unisex",
+        precio: 47000,
+        color: "negro",
+        imagen: "../img/pageProductos/NikeMercurial.webp",
+        genero: "unisex",
+        coleccion: "futbol",
+        tipo: "zapatilla",
+    },
+    {
         nombre: "Nike Heritage",
+        id: "NikeHeritage",
         descripcion: "Mochila de Moda Unisex",
         precio: 20000,
-        color: "azul",
         imagen: "../img/pageProductos/nikeHeritage.webp",
+        color: "azul",
         genero: "unisex",
         coleccion: "moda",
-        tipo: "mochila",
+        tipo: "accesorios",
     },
     {
         nombre: "Nike SB Classic99",
+        id: "NikeSBClassic99",
         descripcion: "Gorra de Moda Unisex",
         precio: 12000,
-        color: "negro",
         imagen: "../img/pageProductos/gorraSB.webp",
+        color: "negro",
         genero: "unisex",
         coleccion: "moda",
-        tipo: "gorra",
+        tipo: "accesorios",
     },
     {
         nombre: "Nike Multiplier",
+        id: "NikeMultiplier",
         descripcion: "Medias de Running Unisex",
         precio: 5500,
-        color: "negro",
         imagen: "../img/pageProductos/mediaRunning.webp",
+        color: "negro",
         genero: "unisex",
-        coleccion: "moda",
-        tipo: "medias",
+        coleccion: "running",
+        tipo: "accesorios",
+    },
+    {
+        nombre: "Nike Dri-FIT Trophy",
+        id: "NikeDri-FITTrophy",
+        descripcion: "Remera de running para Niño",
+        precio: 10000,
+        imagen: "../img/pageProductos/NikeDri-FITTrophy.webp",
+        color: "negro",
+        genero: "niño",
+        coleccion: "running",
+        tipo: "remera",
+    },
+    {
+        nombre: "FC Barcelona visitante",
+        id: "FCBarcelonavisitante",
+        descripcion: "Remera de fútbol para Niño",
+        precio: 20000,
+        imagen: "../img/pageProductos/FCBarcelonavisitante.webp",
+        color: "gris",
+        genero: "niño",
+        coleccion: "futbol",
+        tipo: "remera",
     },
     {
         nombre: "Nike Everyday",
+        id: "NikeEveryday",
         descripcion: "Medias de Running Unisex",
         precio: 5500,
-        color: "blanca",
         imagen: "../img/pageProductos/mediasBlancas.webp",
+        color: "blanco",
         genero: "unisex",
-        coleccion: "moda",
-        tipo: "medias",
+        coleccion: "running",
+        tipo: "accesorios",
     },
     {
         nombre: "Nike Strike",
+        id: "NikeStrike",
         descripcion: "Pelota de Futbol Unisex",
         precio: 18000,
-        color: "blanca",
+        color: "blanco",
         imagen: "../img/pageProductos/nikeStrike.webp",
         genero: "unisex",
-        coleccion: "moda",
-        tipo: "pelota",
+        coleccion: "futbol",
+        tipo: "accesorios",
     },
 ]
 
 // CARGAR PRODUCTOS
-const sectionProductos = document.querySelector("#sectionProductos")
+const sectionProductos = document.querySelector("#sectionProductos");
+let btnAgregar = document.querySelectorAll(".btnAgregar");
 
-function cargarProductos() {
+function cargarProductos(productoElegido) {
 
-    productosNike.forEach( producto => {
+    sectionProductos.innerHTML=""
+
+    productoElegido.forEach( producto => {
 
         const div = document.createElement("div");
         div.classList.add("cardProducto");
@@ -365,28 +308,218 @@ function cargarProductos() {
                 <p class="descripcion">${producto.descripcion}</p>
                 <div>
                     <p class="precio">$${producto.precio}</p>
-                    <button class="blackBtn">ADD TO CARD</button>
+                    <button class="blackBtn btnAgregar" id="${producto.id}">ADD TO CARD</button>
                 </div>
             <div/>
         `
         sectionProductos.append(div);
 
     })
+    actualizarBtnAgregar() 
+}
+cargarProductos(productosNike);
+let carrito = [];
+
+function actualizarBtnAgregar() {
+    btnAgregar = document.querySelectorAll(".btnAgregar");
+    
+    btnAgregar.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            const idBtn = btn.id
+            
+            const existe = carrito.some(prod => prod.id ===idBtn)
+
+            if(existe) {
+                const prod = carrito.map(prod => {
+                    prod.cantidad++
+                })
+            } else {
+                const item = productosNike.find((prod) => prod.id === idBtn)
+                item.cantidad = 1
+                carrito.push(item)
+            }
+
+            cargarCarrito()
+            localStorage.setItem("carritoLS", JSON.stringify(carrito))
+            
+            
+
+        })
+    });
+}
+const carritoVacio = document.querySelector("#carritoVacio");
+const compra = document.querySelector("#compra");
+const precioTotal = document.querySelector("#precioTotal");
+const carritoEnLS = JSON.parse(localStorage.getItem("carritoLS"))
+const total = document.querySelector("#total")
+const numerito = document.querySelector("#numeritoCarrito")
+
+function cargarCarrito() {
+
+    compra.innerHTML = ""
+    if(carritoEnLS) {
+
+        carritoVacio.classList.add("disabled");
+        compra.classList.remove("disabled");
+        precioTotal.classList.remove("disabled");
+
+        carrito.forEach((prod) => {
+
+        const div = document.createElement("div");
+        div.classList.add("producto");
+        div.innerHTML = `
+                <img src="${prod.imagen}" alt="">
+                <div class="detalles">
+                    <p>${prod.nombre}</p>
+                    <p>${prod.descripcion}</p>
+                    <div class="cantidadProducto">
+                        <i class="bi bi-plus-lg sumarCantidad" id="${prod.id}"></i>
+                        <span>${prod.cantidad}</span>
+                        <i class="bi bi-dash-lg restarCantidad" id="${prod.id}"></i>
+                    </div>
+                </div>
+                <div class="eliminar">
+                    <i class="bi bi-trash btnEliminar" id="${prod.id}"></i>
+                    <p>${prod.precio * prod.cantidad}</p>
+                </div>
+                `
+        compra.append(div)
+
+        })
+    } 
+    if (carrito.length === 0) {
+        carritoVacio.classList.remove("disabled");
+        compra.classList.add("disabled");
+        precioTotal.classList.add("disabled");
+    }
+    actualizarBtnEliminar()
+    numerito.innerText = carrito.length
+    total.innerText = carrito.reduce((acc, prod) => acc + prod.precio, 0)
+}
+cargarCarrito()
+
+document.addEventListener("DOMContentLoaded", () => {
+    carrito = JSON.parse(localStorage.getItem("carritoLS")) || []
+    cargarCarrito()
+})
+
+function actualizarBtnEliminar() {
+    const btnEliminar = document.querySelectorAll(".btnEliminar")
+
+    btnEliminar.forEach(btn => {
+        btn.addEventListener("click", eliminarDelCarrito)
+    })
+}
+function eliminarDelCarrito(e) {
+    let idBtn = e.currentTarget.id
+    carrito = carrito.filter((prod) => prod.id !== idBtn)
+    cargarCarrito()
 }
 
-cargarProductos();
+// ACORDEON FILTROS
+const headerAcordeon = document.querySelectorAll(".headerAcordeon");
+const contenidoAcordeon = document.querySelectorAll(".contenidoAcordeon");
 
-// ACORDEON FOOTER
+headerAcordeon.forEach((cadaUno, i) => {
 
-const acordeonHeader = document.querySelector("#acordeonHeader"); 
-const acordeonBody = document.querySelector("#acordeonBody");
-const plus = document.querySelector("#plus");
-const minus = document.querySelector("#minus");
+    headerAcordeon[i].addEventListener("click", () => {
 
-acordeonHeader.addEventListener("click", () => {
-
-    acordeonBody.classList.toggle("active");
+        contenidoAcordeon.forEach((cadaItem, i) => {
+            contenidoAcordeon[i].classList.remove("active")
+        })
+        contenidoAcordeon[i].classList.toggle("active")
+    })
 
 })
+
+// FILTROS POR GENERO
+const tituloProductos = document.querySelector("#tituloDeProductos");
+const btnFiltros = document.querySelectorAll(".btnFiltro");
+const btnFiltrosGenero = document.querySelectorAll(".genero");
+
+btnFiltrosGenero.forEach( boton => {
+
+    boton.addEventListener("click", (e) => {
+
+        btnFiltros.forEach(boton => boton.classList.remove("active"));
+        boton.classList.add("active");
+
+        const productoFiltradoPorGenero = productosNike.filter(producto => producto.genero === e.currentTarget.id.toLowerCase());
+        cargarProductos(productoFiltradoPorGenero);
+        tituloProductos.innerText = e.currentTarget.id;
+
+        filtros.classList.remove("active")
+        document.body.classList.remove("modalAbierto")
+    })
+})
+// FILTROS POR COLOR
+const btnFiltrosColor = document.querySelectorAll(".color");
+btnFiltrosColor.forEach( boton => {
+
+    boton.addEventListener("click", (e) => {
+
+        btnFiltros.forEach(boton => boton.classList.remove("active"));
+        boton.classList.add("active");
+
+        const productoFiltradoPorColor = productosNike.filter(producto => producto.color === e.currentTarget.id)
+        cargarProductos(productoFiltradoPorColor);
+        tituloProductos.innerText = `Productos color ${e.currentTarget.id}`;
+
+        filtros.classList.remove("active")
+        document.body.classList.remove("modalAbierto")
+    })
+})
+// FILTROS POR CATEGORIA
+const btnFiltrosCategoria = document.querySelectorAll(".categoria");
+btnFiltrosCategoria.forEach( boton => {
+
+    boton.addEventListener("click", (e) => {
+
+        btnFiltros.forEach(boton => boton.classList.remove("active"));
+        boton.classList.add("active");
+
+        const productoFiltradoPorCategoria = productosNike.filter(producto => producto.tipo === e.currentTarget.id.toLowerCase())
+        cargarProductos(productoFiltradoPorCategoria);
+        tituloProductos.innerText = e.currentTarget.id;
+
+        filtros.classList.remove("active")
+        document.body.classList.remove("modalAbierto")
+    })
+})
+// FILTROS POR COLECCION
+const btnFiltrosColeccion = document.querySelectorAll(".coleccion");
+btnFiltrosColeccion.forEach( boton => {
+
+    boton.addEventListener("click", (e) => {
+
+        btnFiltros.forEach(boton => boton.classList.remove("active"));
+        boton.classList.add("active");
+
+        const productoFiltradoPorCategoria = productosNike.filter(producto => producto.coleccion === e.currentTarget.id.toLowerCase())
+        cargarProductos(productoFiltradoPorCategoria);
+        tituloProductos.innerText = e.currentTarget.id;
+
+        filtros.classList.remove("active")
+        document.body.classList.remove("modalAbierto")
+    })
+})
+// LIMPIAR FILTROS
+const limpiarFiltros = document.querySelectorAll("#limpiarFiltros");
+limpiarFiltros.forEach( boton => {
+
+    boton.addEventListener("click", (e) => {
+
+        limpiarFiltros.forEach(boton => boton.classList.remove("active"));
+
+        cargarProductos(productosNike)
+        tituloProductos.innerText = "Todos los productos";
+
+
+        filtros.classList.remove("active")
+        document.body.classList.remove("modalAbierto")
+    })
+})
+
+
 
 
