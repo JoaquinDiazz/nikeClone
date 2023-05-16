@@ -11,6 +11,7 @@ botonCerrar.addEventListener("click", () => {
     nav.classList.remove("active")
     document.body.classList.remove("modalAbierto")
 })
+
 // MODAL CARRITO
 const open  = document.querySelector("#openCarrito")
 const close = document.querySelector("#closeCarrito")
@@ -50,19 +51,20 @@ function mover(numero) {
 
 // MODAL DE FILTROS
 
-const btnAbrirFiltros  = document.querySelector("#btnFiltros");
-const filtros          = document.querySelector("#filtros");
-const btnCerrarFiltros = document.querySelector("#btnCerrarFiltros");
+// const btnAbrirFiltros  = document.querySelector("#btnFiltros");
+// const filtros          = document.querySelector("#filtros");
+// const btnCerrarFiltros = document.querySelector("#btnCerrarFiltros");
+// console.log(btnAbrirFiltros)
 
-btnAbrirFiltros.addEventListener("click", () => {
-    filtros.classList.add("active")
-    document.body.classList.add("modalAbierto")
-})
+// btnAbrirFiltros.addEventListener("click", () => {
+//     filtros.classList.add("active")
+//     document.body.classList.add("modalAbierto")
+// })
 
-btnCerrarFiltros.addEventListener("click", () => {
-    filtros.classList.remove("active")
-    document.body.classList.remove("modalAbierto")
-})
+// btnCerrarFiltros.addEventListener("click", () => {
+//     filtros.classList.remove("active")
+//     document.body.classList.remove("modalAbierto")
+// })
 
 // ARRAY DE PRODUCTOS
 const productosNike = [
@@ -394,7 +396,7 @@ function cargarCarrito() {
     }
     actualizarBtnEliminar()
     numerito.innerText = carrito.length
-    total.innerText = carrito.reduce((acc, prod) => acc + prod.precio, 0)
+    total.innerText = `$${carrito.reduce((acc, prod) => acc + prod.precio, 0)}`
 }
 cargarCarrito()
 
@@ -414,7 +416,35 @@ function eliminarDelCarrito(e) {
     let idBtn = e.currentTarget.id
     carrito = carrito.filter((prod) => prod.id !== idBtn)
     cargarCarrito()
+    localStorage.setItem("carritoLS", JSON.stringify(carrito))
 }
+
+
+
+const finalizarCompra = document.querySelector("#finalizarCompra");
+finalizarCompra.addEventListener("click",() => {
+    carrito.length = 0
+    cargarCarrito()
+    localStorage.setItem("carritoLS", JSON.stringify(carrito))
+    alert("Gracia por su compra, vuelva prontos")
+})
+
+// MODAL DE FILTROS
+
+const btnAbrirFiltros  = document.querySelector("#btnFiltros");
+const filtros          = document.querySelector("#filtros");
+const btnCerrarFiltros = document.querySelector("#btnCerrarFiltros");
+console.log(btnAbrirFiltros)
+
+btnAbrirFiltros.addEventListener("click", () => {
+    filtros.classList.add("active")
+    document.body.classList.add("modalAbierto")
+})
+
+btnCerrarFiltros.addEventListener("click", () => {
+    filtros.classList.remove("active")
+    document.body.classList.remove("modalAbierto")
+})
 
 // ACORDEON FILTROS
 const headerAcordeon = document.querySelectorAll(".headerAcordeon");
@@ -446,6 +476,7 @@ btnFiltrosGenero.forEach( boton => {
 
         const productoFiltradoPorGenero = productosNike.filter(producto => producto.genero === e.currentTarget.id.toLowerCase());
         cargarProductos(productoFiltradoPorGenero);
+        window.scrollTo({ top: 0 })
         tituloProductos.innerText = e.currentTarget.id;
 
         filtros.classList.remove("active")
@@ -463,6 +494,7 @@ btnFiltrosColor.forEach( boton => {
 
         const productoFiltradoPorColor = productosNike.filter(producto => producto.color === e.currentTarget.id)
         cargarProductos(productoFiltradoPorColor);
+        window.scrollTo({ top: 0 })
         tituloProductos.innerText = `Productos color ${e.currentTarget.id}`;
 
         filtros.classList.remove("active")
@@ -480,6 +512,7 @@ btnFiltrosCategoria.forEach( boton => {
 
         const productoFiltradoPorCategoria = productosNike.filter(producto => producto.tipo === e.currentTarget.id.toLowerCase())
         cargarProductos(productoFiltradoPorCategoria);
+        window.scrollTo({ top: 0 })
         tituloProductos.innerText = e.currentTarget.id;
 
         filtros.classList.remove("active")
@@ -497,29 +530,50 @@ btnFiltrosColeccion.forEach( boton => {
 
         const productoFiltradoPorCategoria = productosNike.filter(producto => producto.coleccion === e.currentTarget.id.toLowerCase())
         cargarProductos(productoFiltradoPorCategoria);
+        window.scrollTo({ top: 0 })
         tituloProductos.innerText = e.currentTarget.id;
 
         filtros.classList.remove("active")
         document.body.classList.remove("modalAbierto")
     })
 })
-// LIMPIAR FILTROS
-const limpiarFiltros = document.querySelectorAll("#limpiarFiltros");
-limpiarFiltros.forEach( boton => {
+// FILTROS POR PRECIO
+const mayorPrecio = document.querySelector("#mayorPrecio");
+const menorPrecio = document.querySelector("#menorPrecio");
 
-    boton.addEventListener("click", (e) => {
+mayorPrecio.addEventListener("click", () => {
+    let productosMasCaros = [...productosNike]
+    productosMasCaros.sort((a,b) => b.precio - a.precio)
+    cargarProductos(productosMasCaros)
+    window.scrollTo({ top: 0 })
+    tituloProductos.innerText = "Mas caros";
 
-        limpiarFiltros.forEach(boton => boton.classList.remove("active"));
-
-        cargarProductos(productosNike)
-        tituloProductos.innerText = "Todos los productos";
-
-
-        filtros.classList.remove("active")
-        document.body.classList.remove("modalAbierto")
-    })
 })
 
+menorPrecio.addEventListener("click", () => {
+    let productosMasBaratos = [...productosNike] 
+    productosMasBaratos.sort((a,b) => a.precio - b.precio)
+    cargarProductos(productosMasBaratos)
+    window.scrollTo({ top: 0})
+    tituloProductos.innerText = "Mas baratos";
 
+})
 
+// LIMPIAR FILTROS
+const limpiarFiltros = document.querySelector("#limpiarFiltros");
 
+limpiarFiltros.addEventListener("click", () => {
+
+    btnFiltros.forEach(btn => {
+        btn.classList.remove("active")
+    })
+
+    cargarProductos(productosNike)
+    tituloProductos.innerText = "Todos los productos";
+
+    window.scrollTo({ top: 0 })
+
+    filtros.classList.remove("active")
+    document.body.classList.remove("modalAbierto")
+
+})
