@@ -304,7 +304,7 @@ function cargarProductos(productoElegido) {
         const div = document.createElement("div");
         div.classList.add("cardProducto");
         div.innerHTML = `
-            <img src="${producto.imagen}" alt="${producto.nombre}}" class="cardImg">
+            <img src="${producto.imagen}" alt="${producto.nombre}" class="cardImg">
             <div class="cardBody">
                 <p class="nombre">${producto.nombre}</p>
                 <p class="descripcion">${producto.descripcion}</p>
