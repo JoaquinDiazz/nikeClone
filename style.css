@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+body {
+    overflow-x: hidden ;
+}
 /* SE APLICA CON JS AL BODY PARA Q CUANDO SE ABRA EL MODAL NO SE PUEDA INTERACTUAR CON EL FONDO */
 .modalAbierto {
     pointer-events: none;
@@ -184,7 +187,7 @@ header .nav .divContainer .div {
 .carrito.active {
     opacity: 1;
     visibility: visible;
-    width: 40%;
+    width: 30%;
     pointer-events: all;
 }
 .carrito .miCompra .titulo{
@@ -240,14 +243,8 @@ header .nav .divContainer .div {
     justify-content: space-between;
     font-size: 12px;
 }
-.carrito .miCompra .compra .producto .detalles .cantidadProducto {
-    display: flex;
-    justify-content: space-between;
-    width: 143px;
-    padding: .5em .5em;
-    border: 1px solid #dfdcdc;
-    border-radius: 25px;
-    font-size: 1.2em;
+.carrito .miCompra .compra .producto .detalles .nombre {
+    font-weight: bolder;
 }
 .carrito .miCompra .compra .producto .eliminar {
     height: 5.5em;
@@ -266,7 +263,7 @@ header .nav .divContainer .div {
 }
 .carrito .precio {
     background-color: #f5f5f5;
-    padding: 1em;
+    padding: 2em;
     position: sticky;
     bottom: 0;
 }
@@ -278,8 +275,22 @@ header .nav .divContainer .div {
     font-weight: 500;
 }
 .carrito .precio .button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding-top: 2em;
+    gap: 1.8em;
+
+}
+.carrito .precio .button button {
+    margin-top: 2em;
+}
+.carrito .precio .button .seguir{
+    cursor: pointer;
+}
+.carrito .precio .button p {
+    font-size: 13px;
 }
 .carrito .compra.disabled,
 .carrito .carritoVacio.disabled,
@@ -800,8 +811,83 @@ footer .bloque2 .copyright {
     padding: 5px 10px;
     border-radius: .3em;
 }
+/* PAGE PRODUCTO */
+.detallesProductos {
+    display: flex;
+    align-items: flex-start;
+    padding: 2em 1em;
+}
+.detallesProductos > * {
+    width: calc(100% / 3);
+}
+.detallesProductos .imagenes {
+    display: flex;
+    width: 66%;
+}
+/* .detallesProductos .imagenes .imagenPrincipal {
+    display: flex;
+    justify-content: center;
+}
+.detallesProductos .imagenes .imagenPrincipal img {
+    width: 100%;
+} */
+.detallesProductos .imagenes .imagenesSecundarias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 2em;
+    padding-inline: 1em;
+}
+.detallesProductos .imagenes .imagenesSecundarias > * {
+    flex-basis: 47%;
+}
+.detallesProductos .imagenes div img {
+    width: 300px;
+}
+.detallesProductos .detalles {
+}
+.detallesProductos .detalles .titulo {
+    font-size: 28px;
+    font-weight: bolder;
+    padding-bottom: .5em;
+}
+.detallesProductos .detalles .descripcion {
+    font-weight: bold;
+    font-size: 18px;
+}
+.detallesProductos .detalles .precio {
+    font-size: 19px;
+    font-weight: bolder;
+    padding-block: .5em;
 
-
+}
+.detallesProductos .detalles .seleccionar {
+   
+}
+.detallesProductos .detalles .talles {
+    padding-block: .5em;
+    display: flex;
+    justify-content: space-between;
+}
+.detallesProductos .detalles .talles > * {
+    border: 1px solid #dfdcdc;
+    border-radius: 5px;
+    padding: 1em 2em;
+}
+.detallesProductos .detalles .talles > *:hover {
+    cursor: pointer;
+    background-color: #111111;
+    color: white;
+}
+.detallesProductos .detalles .button {
+    display: flex;
+    justify-content: center;
+    padding-block:1.7em ;
+}
+.detallesProductos .detalles:last-child {
+    line-height: 1.5;
+    text-align: justify;
+}
 /* ----------------------MEDIA QUERIES------------------------ */
 @media screen and (max-width: 1025px){
     section,
@@ -1024,6 +1110,25 @@ footer .bloque2 .copyright {
     }
     footer .bloque2 > * {
         justify-content: space-between;
+    }
+    /* PAGE DETALLES PRODUCTOS */
+    .detallesProductos {
+        flex-direction: column;
+    }
+    .detallesProductos > * {
+        width: 100%;
+    }    
+    .detallesProductos .imagenes {
+        width: 100%;
+    }
+    .detallesProductos .imagenes .imagenesSecundarias {
+        justify-content: center;
+        padding-inline: 0;
+    }
+    .detallesProductos .detalles .talles {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 1em;
     }
 }
 @media screen and (max-width: 768px) {

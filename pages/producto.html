@@ -31,7 +31,7 @@
                 <i class="bi bi-x-lg close"></i>
                 <ul>
                     <li><a href="./productos.html" class="texto destacado">Desatacados</a></li>
-                    <li><a id="hola" class="texto">Hombre</a></li>
+                    <li><a id="hola" href="./productos.html"  class="texto">Hombre</a></li>
                     <li><a href="./productos.html" class="texto">Mujer</a></li>
                     <li><a href="./productos.html" class="texto">Niño/a</a></li>
                 </ul>
@@ -94,86 +94,52 @@
                 </div>
             </div>
         </div>
-        
         <!-- CARRUSEL TRES CUOTAS -->
         <div class="tresCuotas">
             <img src="../img/left.png" alt="arrow" class="leftArrow">
-        
+                    
             <div class="container">
                 <p class="texto parrafos parrafo-active" data-id="1">3 cuotas sin interés.</p>
                 <p class="texto parrafos" data-id="2">Entregas a todo el pais</p>
                 <p class="texto parrafos" data-id="3">Por fin Nike.com.ar</p>
             </div>
-        
+                    
             <img src="../img/right.png" alt="arrow" class="rightArrow">
         </div>
-
-        <!-- FILTROS -->
-        <section class="containerFiltrar">
-            <h4 id="tituloDeProductos">Todos los productos</h4>
-            <div class="filtrar" id="btnFiltros">
-                <p>Filtrar</p>
-                <img src="../img/filtro.png" width="20px" alt="filtroImg">
-            </div>
-        </section>
-        <!-- MODAL DE FILTROS -->
-        <div class="modalFiltros" id="filtros">
-            <div class="container">
-                <div class="titulo">
-                    <h4>Filtros</h4>
-                    <i class="bi bi-x-lg close" id="btnCerrarFiltros"></i>
-                </div>
-                <div class="filtros">
-                    <div class="filtro">
-                        <p class="headerAcordeon">Precío</p>
-                        <div class="contenidoAcordeon">
-                            <p class="btnFiltro genero" id="mayorPrecio">Mayor precío</p>
-                            <p class="btnFiltro genero" id="menorPrecio">Menor precío</p>
-                        </div>
-                    </div>
-                    <div class="filtro">
-                        <p class="headerAcordeon">Genero</p>
-                        <div class="contenidoAcordeon">
-                            <p class="btnFiltro genero" id="Hombre">Hombre</p>
-                            <p class="btnFiltro genero" id="Mujer">Mujer</p>
-                            <p class="btnFiltro genero" id="Niño">Niño</p>
-                            <p class="btnFiltro genero" id="Unisex">Unisex</p>
-                        </div>
-                    </div>
-                    <div class="filtro">
-                        <p class="headerAcordeon">Colecciones</p>
-                        <div class="contenidoAcordeon">
-                            <p class="btnFiltro coleccion" id="Moda">Moda</p>
-                            <p class="btnFiltro coleccion" id="Running">Running</p>
-                            <p class="btnFiltro coleccion" id="Futbol">Fútbol</p>
-                        </div>
-                    </div>
-                    <div class="filtro">
-                        <p class="headerAcordeon">Color</p>
-                         <div class="contenidoAcordeon">
-                            <p class="btnFiltro color" id="azul">Azul</p>
-                            <p class="btnFiltro color" id="rosa">Rosa</p>
-                            <p class="btnFiltro color" id="negro">Negro</p>
-                            <p class="btnFiltro color" id="blanco">Blanco</p>
-                            <p class="btnFiltro color" id="gris">Gris</p>
-                        </div>
-                    </div>
-                    <div class="filtro">
-                        <p class="headerAcordeon">Categoría</p>
-                         <div class="contenidoAcordeon">
-                            <p class="btnFiltro categoria" id="Remera">Remera</p>
-                            <p class="btnFiltro categoria" id="Pantalon">Pantalones</p>
-                            <p class="btnFiltro categoria" id="Zapatilla">Zapatilla</p>
-                            <p class="btnFiltro categoria" id="Accesorios">Accesorios</p>
-                        </div>
-                    </div>
-                    <button class="blackBtn limpiarFiltros" id="limpiarFiltros">Limpiar</button>
+        
+       <section class="detallesProductos">
+           <div class="imagenes" id="imagenesContainer">
+                <!-- <div class="imagenPrincipal">
+                    <img src="../img/dunk.webp" alt="">
+                </div> -->
+                <div class="imagenesSecundarias">
+                    <!-- <img src="../img/pageProductos/nikeZoom.webp" alt="">
+                    <img src="../img/pageProductos/nikeZoom.webp" alt="">
+                    <img src="../img/pageProductos/nikeZoom.webp" alt="">
+                    <img src="../img/pageProductos/nikeZoom.webp" alt=""> -->
                 </div>
             </div>
-        </div>
-
-        <section class="sectionProductos" id="sectionProductos">
-
+            <div class="detalles" id="detallesContainer">
+                <!-- <h3 class="titulo" id="nombreProducto">Nike Essential</h3>
+                <p class="descripcion" id="descripcionProducto">Pantalón de Running para Hombre</p>
+                <p class="precio" id="precioProducto">$25.449</p>
+                <p class="seleccionar">Seleccionar Talle</p>
+                <div class="talles">
+                    <p>S</p>
+                    <p>M</p>
+                    <p>L</p>
+                    <p>XL</p>
+                </div>
+                <div class="button">
+                    <button class="blackBtn btnAgregar">Agregar a la bolsa de compra</button>
+                </div>
+                <h4>PANTALONES LIGEROS CON ESTIRAMIENTO EN 2 DIRECCIONES.</h4><br>
+                <p>Nike Los pantalones esenciales son tu opción para combinar con pantalones cortos o usar solo. Su tejido ligero y elástico cubre las piernas y se estrecha para un ajuste perfecto en los tobillos.
+                Fácil de poner y quitar
+                Cremalleras en los tobillos ofrece ventilación y permite ponérselas y quitárselas rápidamente a medida que se sube o baja la capa.
+                Bolsillos alrededor
+                2 con cremallera los bolsillos para las manos protegen las llaves, las tarjetas y otros pequeños elementos esenciales. En la parte posterior, una carcasa sin cremallera estilo sobre tiene espacio para su teléfono.</p> -->
+            </div>
         </section>
         
         <!-- REGISTRATE -->
@@ -238,7 +204,7 @@
 
     <!-- TOASTIFY -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="../js/carrito.js"></script>
+    <script src="../js/producto.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>
