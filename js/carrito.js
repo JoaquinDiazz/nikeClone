@@ -22,20 +22,26 @@ function cargarProductos(productoElegido) {
         const div = document.createElement("div");
         div.classList.add("cardProducto");
         div.innerHTML = `
+
+
             <img src="${producto.imagen}" alt="${producto.nombre}" class="cardImg">
             <div class="cardBody">
-                <p class="nombre">${producto.nombre}</p>
+                <div class="nombreContainer">
+                    <p class="nombre">${producto.nombre}</p>
+                    <i class="bi bi-bag btnAgregar" id="${producto.id}"></i>
+                </div>
                 <p class="descripcion">${producto.descripcion}</p>
                 <div>
-                    <p class="precio botonLoco" id="${producto.id}">$${producto.precio}</p>
-                    <button class="blackBtn btnAgregar" id="${producto.id}">ADD TO CART</button>
+                    <p class="precio" id="${producto.id}">$${producto.precio}</p>
+                    <button class="blackBtn botonLoco" id="${producto.id}">Ver más</button>
                 </div>
-            <div/>
+            </div>
         `
         sectionProductos.append(div);
 
     })
     actualizarBtnAgregar()
+    localStorage.setItem("carritoLS", JSON.stringify(carrito))
     btnLoco()
 }
 let botonLoco = document.querySelectorAll(".botonLoco")
@@ -73,13 +79,12 @@ function actualizarBtnAgregar() {
 
                     text: "Agregaste un producto al carrito",
                     duration: 3000,
-                    close: "true",
-                    position:"left",
+                    close: "false",
+                    position:"center",
                     gravity:"bottom",
                     style: {
                         background: "black",
                       },
-                    close: true  
                     }).showToast();
             }
             cargarCarrito()

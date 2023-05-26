@@ -30,10 +30,10 @@
             <nav class="nav">
                 <i class="bi bi-x-lg close"></i>
                 <ul>
-                    <li><a href="./productos.html" class="texto destacado">Desatacados</a></li>
-                    <li><a id="hola" class="texto">Hombre</a></li>
-                    <li><a href="./productos.html" class="texto">Mujer</a></li>
-                    <li><a href="./productos.html" class="texto">Niño/a</a></li>
+                    <li><a href="./carrito.html" class="texto">Desatacados</a></li>
+                    <li><a href="./carrito.html" class="texto">Hombre</a></li>
+                    <li><a href="./carrito.html" class="texto">Mujer</a></li>
+                    <li><a href="./carrito.html" class="texto">Niño/a</a></li>
                 </ul>
                 <div class="divContainer">
                     <div class="div">
@@ -54,10 +54,6 @@
             </nav>
             <i class="bi bi-list open"></i>
             <div class="icons">
-                <div class="search">
-                    <i class="bi bi-search"></i>
-                    <p>Buscar</p>
-                </div>
                 <a href="#" class="carritoItem">
                     <i class="bi bi-bag" id="openCarrito"><span class="numerito" id="numeritoCarrito">0</span></i>
                 </a>
@@ -173,7 +169,20 @@
         </div>
 
         <section class="sectionProductos" id="sectionProductos">
-
+            <div class="cardProducto">
+                <img src="../img/pageProductos/gorraSB2.webp" alt="${producto.nombre}" class="cardImg">
+                <div class="cardBody">
+                    <div class="nombreContainer">
+                        <p class="nombre">Air Force</p>
+                        <i class="bi bi-bag btnAgregar" id="${producto.id}"></i>
+                    </div>
+                    <p class="descripcion">zapa re linda</p>
+                    <div>
+                        <p class="precio" id="${producto.id}">$10000</p>
+                        <button class="blackBtn verMas" id="${producto.id}">Ver más</button>
+                    </div>
+                </div>
+            </div>
         </section>
         
         <!-- REGISTRATE -->

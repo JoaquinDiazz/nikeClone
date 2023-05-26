@@ -302,7 +302,16 @@
         "color": "negro",
         "genero": "unisex",
        "coleccion": "running",
-        "tipo": "accesorios"
+        "tipo": "accesorios",
+        "descripcionLarga": "COMODIDAD Y RENDIMIENTO. Las medias invisibles Nike Multiplier cuentan con tela absorbente de sudor. La banda de arco en la parte media del pie ofrece un ajuste cómodo y entallado ideal para distintos tipos de entrenamiento.",
+        "imagen2": "../img/pageProductos/mediaRunning2.webp",
+        "imagen3": "../img/pageProductos/mediaRunning3.webp",
+        "imagen4": "../img/pageProductos/mediaRunning4.webp",
+        "imagen5": "../img/pageProductos/mediaRunning5.webp",
+        "talle1": "S",        
+        "talle2": "M",
+        "talle3": "L",
+        "talle4": "XL"
     },
     {
         "nombre": "Nike Dri-FIT Trophy",
@@ -310,10 +319,19 @@
         "descripcion": "Remera de running para Niño",
         "precio": 10000,
         "imagen": "../img/pageProductos/NikeDri-FITTrophy.webp",
-        "color": "negro",
+        "color": "blanco",
         "genero": "niño",
        "coleccion": "running",
-        "tipo": "remera"
+        "tipo": "remera",
+        "descripcionLarga": "LISTA PARA JUGAR. La remera Nike Dri-FIT es la ganadora absoluta por su transpirabilidad, suavidad y ligereza. Esta remera activa tiene poder absorbente de sudor para ayudar a mantener la transpirabilidad mientras corres y juegas todo el día.",
+        "imagen2": "../img/pageProductos/NikeDri-FITTrophy2.webp",
+        "imagen3": "../img/pageProductos/NikeDri-FITTrophy3.webp",
+        "imagen4": "../img/pageProductos/NikeDri-FITTrophy4.webp",
+        "imagen5": "../img/pageProductos/NikeDri-FITTrophy5.webp",
+        "talle1": "S",        
+        "talle2": "M",
+        "talle3": "L",
+        "talle4": "XL"
     },
     {
         "nombre": "FC Barcelona visitante",
@@ -324,28 +342,15 @@
         "color": "gris",
         "genero": "niño",
        "coleccion": "futbol",
-        "tipo": "remera"
-    },
-    {
-        "nombre": "Nike Everyday",
-        "id": "NikeEveryday",
-        "descripcion": "Medias de Running Unisex",
-        "precio": 5500,
-        "imagen": "../img/pageProductos/mediasBlancas.webp",
-        "color": "blanco",
-        "genero": "unisex",
-       "coleccion": "running",
-        "tipo": "accesorios"
-    },
-    {
-        "nombre": "Nike Strike",
-        "id": "NikeStrike",
-        "descripcion": "Pelota de Futbol Unisex",
-        "precio": 18000,
-        "color": "blanco",
-        "imagen": "../img/pageProductos/nikeStrike.webp",
-        "genero": "unisex",
-       "coleccion": "futbol",
-        "tipo": "accesorios"
+        "tipo": "remera",
+        "descripcionLarga": "Al igual que otras camisetas de nuestra colección Stadium, este modelo combina detalles del diseño tipo réplica con una tela absorbente de sudor para darte un look listo para el partido e inspirado en tu equipo favorito.",
+        "imagen2": "../img/pageProductos/FCBarcelonavisitante2.webp",
+        "imagen3": "../img/pageProductos/FCBarcelonavisitante3.webp",
+        "imagen4": "../img/pageProductos/FCBarcelonavisitante4.webp",
+        "imagen5": "../img/pageProductos/FCBarcelonavisitante5.webp",
+        "talle1": "S",        
+        "talle2": "M",
+        "talle3": "L",
+        "talle4": "XL"
     }
 ]

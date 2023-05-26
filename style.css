@@ -38,7 +38,7 @@ footer {
     padding: 15px 30px;
     border-radius: 25px;
     border: none;
-    background-color: black;
+    background-color: #1d1e1e;
     color: white;
     cursor: pointer;
 }
@@ -52,6 +52,21 @@ footer {
     color: black;
     background-color: white;
     cursor: pointer;
+}
+/* SCROLL BAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #262727;
+    border: 2px solid white;
+    border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #111111;
 }
 header {
     display: flex;
@@ -123,14 +138,6 @@ header .bloque2  .icons {
     display: flex;
     align-items: center;
     gap: 2.5em;
-}
-header .bloque2  .icons .search {
-    background-color: #f5f5f5;
-    padding: .6em 4em .6em 1em;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    gap: .8em;
 }
 header .bloque2  .icons i {
     font-size: 1.3em;
@@ -791,9 +798,25 @@ footer .bloque2 .copyright {
     justify-content: space-between;
     gap: .3em;
 }
-.sectionProductos .cardProducto .cardBody .nombre  {
+.sectionProductos .cardProducto .cardBody .nombreContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sectionProductos .cardProducto .cardBody .nombreContainer .nombre  {
     font-weight: bolder;
     font-size: 1.2em;
+}
+.sectionProductos .cardProducto .cardBody .nombreContainer .btnAgregar {
+    padding: .3em;
+    border-radius: 5px;
+    font-size: 20px;
+    color: black;
+    transition: .5s;
+}
+.sectionProductos .cardProducto .cardBody .nombreContainer .btnAgregar:hover {
+    color: white;
+    background-color: #1d1e1e;
 }
 .sectionProductos .cardProducto .cardBody .descripcion {
     color: gray;
@@ -812,6 +835,9 @@ footer .bloque2 .copyright {
     border-radius: .3em;
 }
 /* PAGE PRODUCTO */
+.bodyProducto {
+    position: relative;
+}
 .detallesProductos {
     display: flex;
     align-items: flex-start;
@@ -824,13 +850,6 @@ footer .bloque2 .copyright {
     display: flex;
     width: 66%;
 }
-/* .detallesProductos .imagenes .imagenPrincipal {
-    display: flex;
-    justify-content: center;
-}
-.detallesProductos .imagenes .imagenPrincipal img {
-    width: 100%;
-} */
 .detallesProductos .imagenes .imagenesSecundarias {
     display: flex;
     flex-wrap: wrap;
@@ -843,8 +862,6 @@ footer .bloque2 .copyright {
 }
 .detallesProductos .imagenes div img {
     width: 300px;
-}
-.detallesProductos .detalles {
 }
 .detallesProductos .detalles .titulo {
     font-size: 28px;
@@ -861,9 +878,6 @@ footer .bloque2 .copyright {
     padding-block: .5em;
 
 }
-.detallesProductos .detalles .seleccionar {
-   
-}
 .detallesProductos .detalles .talles {
     padding-block: .5em;
     display: flex;
@@ -872,8 +886,9 @@ footer .bloque2 .copyright {
 .detallesProductos .detalles .talles > * {
     border: 1px solid #dfdcdc;
     border-radius: 5px;
-    padding: 1em 2em;
+    padding: 1em 1.8em;
 }
+.detallesProductos .detalles .talles > *.active, 
 .detallesProductos .detalles .talles > *:hover {
     cursor: pointer;
     background-color: #111111;
@@ -887,6 +902,91 @@ footer .bloque2 .copyright {
 .detallesProductos .detalles:last-child {
     line-height: 1.5;
     text-align: justify;
+}
+.detallesProductos h4 {
+    font-size: 20px;
+    font-weight: bold;
+    padding-block: 20px;
+    cursor: pointer;
+    border-top: 1px solid #dfdcdc;
+}
+.detallesProductos .devoluciones {
+    margin-top: 1.5em;
+}
+.detallesProductos .contenidoAcordeon {
+    font-size: 16px;
+    line-height: 1.5;
+    padding-bottom: .5em;
+}
+.detallesProductos .comparte {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #dfdcdc;
+    border-bottom: 1px solid #dfdcdc;
+}
+.detallesProductos .comparte .redes {
+    list-style: none;
+    display: flex;
+    gap: .5em;
+    font-size: 18px;
+}
+.detallesProductos .comparte .redes .wsp {
+    background-color: 	#4dc247;
+    border-radius: 50%;
+}
+.detallesProductos .comparte .redes .face {
+    background-color: #1877f2;
+    border-radius: 50%;
+}
+.detallesProductos .comparte .redes .twitter {
+    background-color: #55acee;
+    border-radius: 50%;
+}
+.detallesProductos .comparte .redes .pinterest {
+    background-color: #cb2027;
+    border-radius: 50%;
+}
+.detallesProductos .comparte .redes a {
+    text-decoration: none;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.detallesProductos .comparte .redes i {
+    color: white; 
+    font-size: 18px;
+}
+/* MODAL CUANDO SE HACE CLICK EN LAS IMAGENES */
+.modalImg {
+    height: 90%;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    overflow: scroll;
+    box-shadow: 0 0 100vmax rgba(0,0,0,.7);
+    display: none;
+    pointer-events: all;
+}
+.modalImg div {
+    padding: 1em;
+    display: flex;
+    justify-content: end;
+}
+.modalImg div i {
+    font-size: 20px;
+    cursor: pointer;
+}
+.modalImg .container {
+    height: 100%;
+}
+.modalImg img {
+    object-fit: contain;
 }
 /* ----------------------MEDIA QUERIES------------------------ */
 @media screen and (max-width: 1025px){
@@ -908,10 +1008,6 @@ footer .bloque2 .copyright {
     }
     header .bloque2  .icons {
         gap: .75em;
-    }
-    header .bloque2  .icons .search {
-        padding: 0;
-        border-radius: none;
     }
     header .bloque2  .icons p {
         display: none;
@@ -1120,6 +1216,7 @@ footer .bloque2 .copyright {
     }    
     .detallesProductos .imagenes {
         width: 100%;
+        order: 99;
     }
     .detallesProductos .imagenes .imagenesSecundarias {
         justify-content: center;
@@ -1134,9 +1231,6 @@ footer .bloque2 .copyright {
 @media screen and (max-width: 768px) {
     header {
         height: 3.5em;
-    }
-    header .bloque2  .icons .search {
-        gap: 2em;
     }
     /* MODAL CARRITO */
     .carrito.active {
@@ -1211,6 +1305,14 @@ footer .bloque2 .copyright {
     /* FOOTER */
     footer .bloque2 > * {
         flex-direction: column;
+    }
+    .modalImg {
+        width: 90%;
+        height: 70%;
+    }
+    .modalImg .container img {
+        object-fit: cover;
+        overflow: scroll;
     }
 }
 @media screen and (max-width: 480px) {

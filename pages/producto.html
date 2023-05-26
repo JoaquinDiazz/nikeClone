@@ -16,7 +16,7 @@
     <!-- CSS  -->
     <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body class="bodyProducto">
     <header>
         <div class="bloque1">
             <a href="#"><img src="../img/jordan.svg" alt="jordan" style="width: 1.5em;"></a>
@@ -30,10 +30,10 @@
             <nav class="nav">
                 <i class="bi bi-x-lg close"></i>
                 <ul>
-                    <li><a href="./productos.html" class="texto destacado">Desatacados</a></li>
-                    <li><a id="hola" href="./productos.html"  class="texto">Hombre</a></li>
-                    <li><a href="./productos.html" class="texto">Mujer</a></li>
-                    <li><a href="./productos.html" class="texto">Niño/a</a></li>
+                    <li><a href="./carrito.html" class="texto">Desatacados</a></li>
+                    <li><a href="./carrito.html" class="texto">Hombre</a></li>
+                    <li><a href="./carrito.html" class="texto">Mujer</a></li>
+                    <li><a href="./carrito.html" class="texto">Niño/a</a></li>
                 </ul>
                 <div class="divContainer">
                     <div class="div">
@@ -54,10 +54,10 @@
             </nav>
             <i class="bi bi-list open"></i>
             <div class="icons">
-                <div class="search">
+                <!-- <div class="search">
                     <i class="bi bi-search"></i>
                     <p>Buscar</p>
-                </div>
+                </div> -->
                 <a href="#" class="carritoItem">
                     <i class="bi bi-bag" id="openCarrito"><span class="numerito" id="numeritoCarrito">0</span></i>
                 </a>
@@ -65,7 +65,7 @@
         </div>
     </header>
 
-    <main>
+    <main class="mainDetalles">
         <!-- MODAL CARRITO -->
         <div class="carrito">
             <div class="miCompra">
@@ -109,38 +109,44 @@
         
        <section class="detallesProductos">
            <div class="imagenes" id="imagenesContainer">
-                <!-- <div class="imagenPrincipal">
-                    <img src="../img/dunk.webp" alt="">
-                </div> -->
                 <div class="imagenesSecundarias">
-                    <!-- <img src="../img/pageProductos/nikeZoom.webp" alt="">
-                    <img src="../img/pageProductos/nikeZoom.webp" alt="">
-                    <img src="../img/pageProductos/nikeZoom.webp" alt="">
-                    <img src="../img/pageProductos/nikeZoom.webp" alt=""> -->
                 </div>
             </div>
             <div class="detalles" id="detallesContainer">
-                <!-- <h3 class="titulo" id="nombreProducto">Nike Essential</h3>
-                <p class="descripcion" id="descripcionProducto">Pantalón de Running para Hombre</p>
-                <p class="precio" id="precioProducto">$25.449</p>
-                <p class="seleccionar">Seleccionar Talle</p>
-                <div class="talles">
-                    <p>S</p>
-                    <p>M</p>
-                    <p>L</p>
-                    <p>XL</p>
+                <div class="devoluciones">
+                    <div class="headerAcordeon">
+                        <h4>Devoluciones y envíos</h4>
+                    </div>
+                    <div class="contenidoAcordeon">
+                        <p class="contenidoAcordeon">Entregas a todo el país. Consultá la fecha estimada de entrega al realizar la compra. Podés devolver tu pedido por cualquier motivo, sin cargo, dentro de un plazo de 30 días.</p>
+                    </div>
                 </div>
-                <div class="button">
-                    <button class="blackBtn btnAgregar">Agregar a la bolsa de compra</button>
+                <div class="pago">
+                    <div class="headerAcordeon">
+                        <h4>Métodos de pago</h4>
+                    </div>
+                    <div class="contenidoAcordeon">
+                        <p class="contenidoAcordeon">Aceptamos las siguientes opciones de pago: Tarjetas de Crédito, Tarjetas de Débito y Mercado Pago.</p>
+                    </div>
                 </div>
-                <h4>PANTALONES LIGEROS CON ESTIRAMIENTO EN 2 DIRECCIONES.</h4><br>
-                <p>Nike Los pantalones esenciales son tu opción para combinar con pantalones cortos o usar solo. Su tejido ligero y elástico cubre las piernas y se estrecha para un ajuste perfecto en los tobillos.
-                Fácil de poner y quitar
-                Cremalleras en los tobillos ofrece ventilación y permite ponérselas y quitárselas rápidamente a medida que se sube o baja la capa.
-                Bolsillos alrededor
-                2 con cremallera los bolsillos para las manos protegen las llaves, las tarjetas y otros pequeños elementos esenciales. En la parte posterior, una carcasa sin cremallera estilo sobre tiene espacio para su teléfono.</p> -->
+                <div class="comparte">
+                    <h4>Comparte</h4>
+                    <div class="redes">
+                        <li class="wsp"><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                        <li class="face"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li class="pinterest"><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+                        <li class="twitter"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <div class="modalImg" id="modalImg">
+            <div><i class="bi bi-x-lg" id="cerrarModalImg"></i></div>
+            <div class="container" id="containerImg">
+    
+            </div>
+        </div>
         
         <!-- REGISTRATE -->
         <section class="registrate">
